@@ -1,0 +1,380 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Install Kernel 3.8.2 Dari Source Untuk Slackware 14.0 - Pramono</title>
+  <meta name="author" content="Pramono">
+
+  
+  <meta name="description" content="Selamat malam teman teman, seperti biasa, tulisan yang saya buat bertujuan untuk sekedar mengingatkan saya yang sudah lupaan hehe. Sebenarnya saya &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://pramono.github.io/blog/2014/09/18/install-kernel-3-dot-8-2-dari-source-untuk-slackware-14-dot-0">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Pramono" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Pramono</a></h1>
+  
+    <h2>A blogging framework for stupid author.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:pramono.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Install Kernel 3.8.2 Dari Source Untuk Slackware 14.0</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2014-09-18T06:04:27+07:00'><span class='date'><span class='date-month'>Sep</span> <span class='date-day'>18</span><span class='date-suffix'>th</span>, <span class='date-year'>2014</span></span> <span class='time'>6:04 am</span></time>
+        
+           | <a href="#disqus_thread"
+             data-disqus-identifier="http://pramono.github.io">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>Selamat malam teman teman, seperti biasa, tulisan yang saya buat bertujuan untuk sekedar mengingatkan saya yang sudah lupaan hehe. Sebenarnya saya hanya iseng-iseng aja mencoba kernel 3.8.2 dengan dalih si kernel baru ini sudah men-support secara default kernel module alx yang di butuhkan LAN Card atheros AR8162 di laptop kesayangan saya, namun apa daya ternyata kernel baru ini belum juga memuat module alx milik atheros AR8162. Tapi apa boleh buat toh kernel nya udah terinstall dan berhasil di boot. Oiya dan satu lagi, problem LAN Card sudah solved, :D nanti saya akan tulis di tulisan selanjutnya.
+Tentu saja kernel baru ini memuat module-module yang lebih baru dan lebih stabil dari kernel sebelumnya, untuk “mengintip” apa saja perubahan yang ada di kernel baru ini bisa lihat di bagian changelog nya.</p>
+
+<!-- more-->
+
+
+<p>Download dulu kernelnya, Kernel download dari <a href="http://mirror.facebook.net/kernel.org/pub/linux/kernel/v3.0/linux-3.8.2.tar.xz">mirror facebook</a>
+kalo sudah di download kemudian buka terminal dan masuk ke dir /usr/src/</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>root@darkstar:# cd /usr/src</span></code></pre></td></tr></table></div></figure>
+
+
+<p>lalu extrak source kernelnya</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>root@darkstar:# tar xvf /path/linux-kernel-.tar.xz</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>NOTE : path adalah tempat dimana anda menyimpan hasil download-an kernel tersebut</strong></p>
+
+<p>kalo sudah di extrak sekarang buat simbolik link</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>root@darkstar:# ln -s linux-versi linux</span></code></pre></td></tr></table></div></figure>
+
+
+<p>pindah ke hasil extrak source kernel yang anda download</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>root@darkstar:# cd linux-versi</span></code></pre></td></tr></table></div></figure>
+
+
+<p>buat konfigurasi baru untuk kernel baru anda, konfigurasi baru ini bisa merujuk pada kernel anda yang sebelumnya</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>root@darkstar:# cat /boot/config-kernel-yang-andainginkan > .config
+</span><span class='line'>root@darkstar:# make oldconfig
+</span><span class='line'>root@darkstar:# bzImage</span></code></pre></td></tr></table></div></figure>
+
+
+<p>tunggu proses bzImage sampai selesai, karena proses ini memakan waktu yang cukup lama, ya bisa rebus air dulu untuk nyeduh kopi. :p
+kalo sudah selesai, sekarang make modulesnya</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>root@darkstar:# make modules</span></code></pre></td></tr></table></div></figure>
+
+
+<p>nah kalo airnya sudah mendidih, sekarang giliran nyeduh kopinya, udah beli kan kopinya ? :p karena proses penginstallan modulenya juga memakan waktu yang agak lama.
+Kalo semuanya sudah selesai. Sekarang masuk ke directory</p>
+
+<p><code>/usr/src/linux-versi/tar-install/boot</code></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>root@darkstar:# cd /usr/src/linux-versi/tar-install/boot</span></code></pre></td></tr></table></div></figure>
+
+
+<p>copykan semuanya kecuali vmlinux ke directory /boot</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>root@darkstar:# cp -a System.map-* config-* vmlinuz-* /boot</span></code></pre></td></tr></table></div></figure>
+
+
+<p>kalau sudah sekarang pindah ke
+<code>/usr/src/linux-versi/tar-install/lib</code></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>root@darkstar:# cd /usr/src/linux-versi/tar-install/lib</span></code></pre></td></tr></table></div></figure>
+
+
+<p>disana ada directory firmware/ dan modules/ lalu anda copykan saja modulesnya ke /lib</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>root@darkstar:# cp -r modules /lib/</span></code></pre></td></tr></table></div></figure>
+
+
+<p>sekarang pindah ke /</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>root@darkstar:# cd /</span></code></pre></td></tr></table></div></figure>
+
+
+<p>sekarang depmod versi kernel yang baru</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>root@darkstar:# depmod -a versi-kernel-baru</span></code></pre></td></tr></table></div></figure>
+
+
+<p>sekarang buat initrd nya, oiya kalo sebelumnya anda sudah ada initrd.gz maka saya sarankan agar menambahkan parameter -o setelah perintah mkintrd agar initrd yang lama tidak tertimpa dengan initrd yang baru</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>root@darkstar:# mkinitrd -o NAMAINITRDANDA -c -k 3.8.2-smp -m mbcache:jbd:xfs -f xfs -r /dev/sda6</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>NOTE : xfs adalah jenis file sistem yang saya gunakan, dan /dev/sda6 adalah letak root pada Linux Slakcware saya, sesuaikan dengan keadaan mesin anda.</strong></p>
+
+<p>kalau sudah tidak ada yang error sekarang edit lilo nya</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>root@darkstar:# nano /etc/lilo.conf</span></code></pre></td></tr></table></div></figure>
+
+
+<p>tambahkan baris ini</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'># Linux bootable partition config begins
+</span><span class='line'>image = /boot/vmlinuz-3.8.2-smp
+</span><span class='line'>initrd = /boot/newinitrd
+</span><span class='line'>root = /dev/sda6
+</span><span class='line'>label = Linuxbaru
+</span><span class='line'>read-only
+</span><span class='line'># Linux bootable partition config ends</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Selamat mencoba. Happy hacking :D</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Pramono</span></span>
+
+      
+
+
+
+
+<time class='entry-date' datetime='2014-09-18T06:04:27+07:00'><span class='date'><span class='date-month'>Sep</span> <span class='date-day'>18</span><span class='date-suffix'>th</span>, <span class='date-year'>2014</span></span> <span class='time'>6:04 am</span></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/slackware/'>slackware</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://pramono.github.io/blog/2014/09/18/install-kernel-3-dot-8-2-dari-source-untuk-slackware-14-dot-0/" data-via="ipramono92" data-counturl="http://pramono.github.io/blog/2014/09/18/install-kernel-3-dot-8-2-dari-source-untuk-slackware-14-dot-0/" >Tweet</a>
+  
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2014/09/17/memainkan-mp3-di-amarok-slackware-14-dot-0/" title="Previous Post: Memainkan MP3 di Amarok Slackware 14.0">&laquo; Memainkan MP3 di Amarok Slackware 14.0</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2014/09/18/cara-membuat-repository-baru-di-github/" title="Next Post: Cara membuat repository baru di Github">Cara membuat repository baru di Github &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/09/20/linux-for-skripsi-being/">Linux for Skripsi Being</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/09/20/install-sublime-text-2-plus-crack-di-ubuntu-14-dot-04/">Install Sublime_text 2 Plus Crack Di Ubuntu 14.04</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/09/19/hello-world-pada-python/">Hello World Pada Python</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/09/19/install-geany-ubuntu-14-dot-04/">Install Geany Ubuntu 14.04</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/09/18/cara-mengatasi-build-warning-layout-nil-pada-octopress/">Cara Mengatasi Build Warning : Layout Nil Pada Octopress</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+<section>
+	<h1>Categories</h1>
+	<ul id="categories">
+	<li class='category'><a href='/blog/categories/geany/'>geany (1)</a></li>
+<li class='category'><a href='/blog/categories/github/'>github (2)</a></li>
+<li class='category'><a href='/blog/categories/my-story/'>my story (1)</a></li>
+<li class='category'><a href='/blog/categories/octopress/'>octopress (2)</a></li>
+<li class='category'><a href='/blog/categories/optimus/'>optimus (2)</a></li>
+<li class='category'><a href='/blog/categories/python/'>python (1)</a></li>
+<li class='category'><a href='/blog/categories/slackware/'>slackware (4)</a></li>
+<li class='category'><a href='/blog/categories/sublime/'>sublime (1)</a></li>
+<li class='category'><a href='/blog/categories/ubuntu/'>ubuntu (2)</a></li>
+
+	</ul>
+</section>
+<a class="twitter-timeline" href="https://twitter.com/ipramono92" data-widget-id="513311392019931136">Tweets by @ipramono92</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - Pramono -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'indrapramono';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://pramono.github.io/blog/2014/09/18/install-kernel-3-dot-8-2-dari-source-untuk-slackware-14-dot-0/';
+        var disqus_url = 'http://pramono.github.io/blog/2014/09/18/install-kernel-3-dot-8-2-dari-source-untuk-slackware-14-dot-0/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id; js.async = true;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

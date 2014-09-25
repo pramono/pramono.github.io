@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Sublime | Pramono]]></title>
+  <link href="http://pramono.github.io/blog/categories/sublime/atom.xml" rel="self"/>
+  <link href="http://pramono.github.io/"/>
+  <updated>2014-09-26T06:17:04+07:00</updated>
+  <id>http://pramono.github.io/</id>
+  <author>
+    <name><![CDATA[Pramono]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Install Sublime_text 2 Plus Crack Di Ubuntu 14.04]]></title>
+    <link href="http://pramono.github.io/blog/2014/09/20/install-sublime-text-2-plus-crack-di-ubuntu-14-dot-04/"/>
+    <updated>2014-09-20T19:04:27+07:00</updated>
+    <id>http://pramono.github.io/blog/2014/09/20/install-sublime-text-2-plus-crack-di-ubuntu-14-dot-04</id>
+    <content type="html"><![CDATA[<p>Malam minggu yang sepi ini karna jomblo ngenes jadi malam ini saya dedikasikan untuk nulis sedikit tutorial install sublime text 2 di ubuntu 14.04 plus crack nya. Entah kenapa ya sublime text itu setau saya open source tapi kenapa butuh license juga. Apa ini open source nya microsoft ya. Hahaha :v</p>
+
+<p>Kalau kamu pakai ubuntu 14.04 gampang. Tinggal tambah repo update repo terus install..</p>
+
+<p>Pertama tambahkan dulu repo tambahan untuk sublime_text 2.</p>
+
+<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo add-apt-repository ppa:webupd8team/sublime-text-2
+</span><span class='line'>sudo apt-get update
+</span><span class='line'>sudo apt-get install sublime-text</span></code></pre></td></tr></table></div></figure></p>
+
+<!-- more-->
+
+
+<p>Kalau semua sudah selesai langsung mainkan sublime nya.</p>
+
+<p><img class="center" src="/images/sublime.png" width="350" height="250" title="sublime" ></p>
+
+<p>Terus import licensenya, tab ke help terus import, Copas semua licensenya di bawah.</p>
+
+<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>—– BEGIN LICENSE —–
+</span><span class='line'>Alexander
+</span><span class='line'>Single User License
+</span><span class='line'>EA7E-814345
+</span><span class='line'>51F47F09 4EAB1285 7827EFF0 8B1207DC
+</span><span class='line'>A76A6EA3 E1A1CA7A DC1F2703 14,897,784
+</span><span class='line'>8EDC1C82 3F2A58B9 1C0C8B24 67686432
+</span><span class='line'>281245B3 6233DE5C ADC5C2F9 61FB8A04
+</span><span class='line'>171B63EF 86BA423F 6AC884FD 3273A7AA
+</span><span class='line'>5F50A6DB CE7859AE D62D2B37 AEEDD8C2
+</span><span class='line'>078A8A20 70EEA791 84F48C1E 8ABA7DEB
+</span><span class='line'>0B3907C0 C9A3523B 0091A045 6F67AED8
+</span><span class='line'>—— END LICENSE ——</span></code></pre></td></tr></table></div></figure></p>
+]]></content>
+  </entry>
+  
+</feed>

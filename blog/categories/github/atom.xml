@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Github | Pramono]]></title>
+  <link href="http://pramono.github.io/blog/categories/github/atom.xml" rel="self"/>
+  <link href="http://pramono.github.io/"/>
+  <updated>2014-09-26T06:17:04+07:00</updated>
+  <id>http://pramono.github.io/</id>
+  <author>
+    <name><![CDATA[Pramono]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Cara Install Octopress Dan Deploy Ke Github]]></title>
+    <link href="http://pramono.github.io/blog/2014/09/18/cara-install-octopress-dan-deploy-ke-github/"/>
+    <updated>2014-09-18T10:13:19+07:00</updated>
+    <id>http://pramono.github.io/blog/2014/09/18/cara-install-octopress-dan-deploy-ke-github</id>
+    <content type="html"><![CDATA[<p>Selamat pagi. Akhirnya masa-masa kuliah saya berakhir, mumpung masih pengangguran saya mencoba membuat sedikit tutorial cara install octopress dan cara deploy ke github.</p>
+
+<p>Octopress itu apaan sih ?</p>
+
+<p><strong><code>Octopress is a bloging framework for hacker.</code></strong></p>
+
+<p>Gitu katanya.</p>
+
+<p>Octopress menggunakan markdown yang nantinya akan di generate oleh jekyll menjadi sebuah halaman html static. Menggunakan octopress berarti kamu tidak perlu memakai jasa hosting berbayar untuk menyimpan database dari blog kamu. kamu cukup menggunakan github atau heroku yang tentunya gratis.</p>
+
+<p>Pertama pastikan kamu sudah menginstall Ruby dan gitcore. Rekomendasi dari octopress.org adalah ruby yang digunakan sebaiknya versi 1.9.3 atau di atasnya. Kalau kamu menggunakan sistem operasi Slackware 14.0 atau 14.1 kamu tidak perlu menginstall ruby dan gitcore. Semuanya sudah di sediakan oleh om Patrick Volkerding. Kalau masalah depedency paket slackware memang oke. Tapi kalau kamu pake ubuntu ya kudu wajib di install dulu.</p>
+
+<!-- more-->
+
+
+<p>Oiya hampir kelupaan, pada ubuntu yang saya gunakan 14.04 install juga curl dan node js nya. Soalnya sewaktu saya rake preview halaman octopress nya gak muncul. Setelah tanya embah ternyata harus install curl dan node js nya. Kalau pake slackware gimana ? Ya gak usah. Udah include didalamnya. Keren kan si slackware.</p>
+
+<p>Kalau sudah di install semuanya sekarang kita clone dari github, kalau belum punya akun github, bikin dulu akun githubnya.</p>
+
+<p><code>git clone git://github.com/imathis/octopress.git username.github.io</code></p>
+
+<p>contoh</p>
+
+<p><figure class='code'><figcaption><span>Clone Github </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git clone git://github.com/imathis/octopress.git indrapramono.github.io
+</span><span class='line'>cd indrapramono.github.io</span></code></pre></td></tr></table></div></figure></p>
+
+<p>install gem bundler kalau belum di install.</p>
+
+<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>gem install bundler
+</span><span class='line'>bundle install</span></code></pre></td></tr></table></div></figure></p>
+
+<p><figure class='code'><figcaption><span>Perintah rake </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rake install
+</span><span class='line'>rake new_post[&ldquo;judul artikel&rdquo;]</span></code></pre></td></tr></table></div></figure></p>
+
+<p>seperti pada gambar</p>
+
+<p><img class="center" src="/images/newpost.jpg" width="500" height="500" title="Rake NewPost" ></p>
+
+<p>Kalau tidak ada yang error, install page di githubnya. Buat repository baru di github namarepo.github.io.git. Kalau belum jelas silahkan berkunjung ke <a href="http://pramono.github.io/blog/2014/09/18/cara-membuat-repository-baru-di-github/">sini</a></p>
+
+<p><code>rake setup_github_pages</code>
+<code>git@github.com:usernamae/namarepository</code></p>
+
+<p>contoh</p>
+
+<p><figure class='code'><figcaption><span>Deploy ke Github </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rake setup_github_pages
+</span><span class='line'>git@github.com:indrapramono/indrapramono.github.io.git</span></code></pre></td></tr></table></div></figure></p>
+
+<p>Kalau sudah langsung aja di generate &amp; deploy.</p>
+
+<p><figure class='code'><figcaption><span>Rake Generate &amp; Deploy </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rake generate
+</span><span class='line'>rake deploy</span></code></pre></td></tr></table></div></figure></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Cara Membuat Repository Baru Di Github]]></title>
+    <link href="http://pramono.github.io/blog/2014/09/18/cara-membuat-repository-baru-di-github/"/>
+    <updated>2014-09-18T09:54:23+07:00</updated>
+    <id>http://pramono.github.io/blog/2014/09/18/cara-membuat-repository-baru-di-github</id>
+    <content type="html"><![CDATA[<p>Pada kesempatan kali ini saya ingin men-share bagaimana membuat repository baru di github. Apaan sih github ? Singkatnya sih github itu tempat menyimpan segala macem source code entah itu source code untuk membangun web, ataupun software yang di open source kan oleh penggunggah code ke repository nya. Semua orang bisa mendownload dan memodifikasinya sesuai keinginan. Mungkin di Open karena bertujuan agar applikasi yang sedang di kerjakannya dapat dengan cepat berkembang dan pastinya agar software yang sedang dibangun dapat menjadi lebih baik.</p>
+
+<p>Pertama kamu harus punya akun github. Daftar aja tuh. Gratis kok.</p>
+
+<p>Terus ikutin aja nih cara-cara yang ada di gambar dibawah.</p>
+
+<!-- more-->
+
+
+<p><img class="center" src="/images/repo1.png" width="420" height="420"></p>
+
+<p><img class="center" src="/images/repo2.png" width="420" height="420"></p>
+
+<p>Kalau reponya udah jadi penampakannya seperti ini</p>
+
+<p><img class="center" src="/images/repo3.png" width="420" height="420"></p>
+]]></content>
+  </entry>
+  
+</feed>

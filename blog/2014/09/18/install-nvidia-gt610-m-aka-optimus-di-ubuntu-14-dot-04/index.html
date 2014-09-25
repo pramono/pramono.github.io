@@ -1,0 +1,489 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Install NVIDIA GT610m Aka Optimus Di Ubuntu 14.04 - Pramono</title>
+  <meta name="author" content="Pramono">
+
+  
+  <meta name="description" content="Pada kesempatan ini saya akan men-share cara install Nvidia Optimus pada ubuntu. Khusus untuk ubuntu prosesnya gak ribet ribet amat. cuma tinggal &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://pramono.github.io/blog/2014/09/18/install-nvidia-gt610-m-aka-optimus-di-ubuntu-14-dot-04">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Pramono" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Pramono</a></h1>
+  
+    <h2>A blogging framework for stupid author.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:pramono.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Install NVIDIA GT610m Aka Optimus Di Ubuntu 14.04</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2014-09-18T20:19:03+07:00'><span class='date'><span class='date-month'>Sep</span> <span class='date-day'>18</span><span class='date-suffix'>th</span>, <span class='date-year'>2014</span></span> <span class='time'>8:19 pm</span></time>
+        
+           | <a href="#disqus_thread"
+             data-disqus-identifier="http://pramono.github.io">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>Pada kesempatan ini saya akan men-share cara install Nvidia Optimus pada ubuntu. Khusus untuk ubuntu prosesnya gak ribet ribet amat. cuma tinggal tambahin repo trus apt-get install :p</p>
+
+<p>tambahkan repo universe dan multiverse</p>
+
+<figure class='code'><figcaption><span>Universe & Multiverse </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo add-apt-repository "deb http://archive.ubuntu.com/ubuntu $(lsb_release -sc) main universe restricted multiverse"
+</span><span class='line'>
+</span><span class='line'>sudo add-apt-repository "deb http://archive.ubuntu.com/ubuntu $(lsb_release -sc) universe"
+</span><span class='line'>
+</span><span class='line'>sudo add-apt-repository "deb http://archive.ubuntu.com/ubuntu $(lsb_release -sc) universe"
+</span><span class='line'>
+</span><span class='line'>sudo add-apt-repository "deb http://archive.ubuntu.com/ubuntu $(lsb_release -sc) main universe restricted multiverse"
+</span><span class='line'>
+</span><span class='line'>sudo add-apt-repository "deb http://archive.canonical.com/ubuntu $(lsb_release -sc) partner"</span></code></pre></td></tr></table></div></figure>
+
+
+<!-- more-->
+
+
+<p>Lalu update reponya dan install bumblebee nya serta reboot.</p>
+
+<figure class='code'><figcaption><span>Terminal </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo apt-get update
+</span><span class='line'>
+</span><span class='line'>sudo apt-get install mesa-utils
+</span><span class='line'>
+</span><span class='line'>sudo apt-get install bumblebee bumblebee-nvidia primus linux-headers-generic
+</span><span class='line'>
+</span><span class='line'>reboot</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Kalau sudah di install coba akses GPU secondary nya.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>optirun bash</span></code></pre></td></tr></table></div></figure>
+
+
+<p>kalau terjadi error</p>
+
+<p><code>[ERROR]Cannot access secondary GPU - error: [XORG] (EE) NVIDIA(0): Failed to initialize the NVIDIA GPU at PCI:1:0:0. Please[ERROR]Aborting because fallback start is disabled</code></p>
+
+<p>lakukan beberapa langkah dibawah ini.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo apt-get install nvidia-331-updates</span></code></pre></td></tr></table></div></figure>
+
+
+<p>edit skrip konfigurasi bumblebee <code>sudo gedit /etc/bumblebee/bumblebee.conf</code></p>
+
+<p>ganti konfigurasinya menggunakan skrip dibawah, sebelumnya backup dahulu skrip konfigurasi defaultnya. untuk jaga-jaga</p>
+
+<figure class='code'><figcaption><span>Konfigurasi Bumblebee </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+<span class='line-number'>53</span>
+<span class='line-number'>54</span>
+<span class='line-number'>55</span>
+<span class='line-number'>56</span>
+<span class='line-number'>57</span>
+<span class='line-number'>58</span>
+<span class='line-number'>59</span>
+<span class='line-number'>60</span>
+<span class='line-number'>61</span>
+<span class='line-number'>62</span>
+<span class='line-number'>63</span>
+<span class='line-number'>64</span>
+<span class='line-number'>65</span>
+<span class='line-number'>66</span>
+<span class='line-number'>67</span>
+<span class='line-number'>68</span>
+<span class='line-number'>69</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'># Configuration file for Bumblebee. Values should **not** be put between quotes
+</span><span class='line'>
+</span><span class='line'>## Server options. Any change made in this section will need a server restart
+</span><span class='line'># to take effect.
+</span><span class='line'>[bumblebeed]
+</span><span class='line'># The secondary Xorg server DISPLAY number
+</span><span class='line'>VirtualDisplay=:8
+</span><span class='line'># Should the unused Xorg server be kept running? Set this to true if waiting
+</span><span class='line'># for X to be ready is too long and don't need power management at all.
+</span><span class='line'>KeepUnusedXServer=false
+</span><span class='line'># The name of the Bumbleblee server group name (GID name)
+</span><span class='line'>ServerGroup=bumblebee
+</span><span class='line'># Card power state at exit. Set to false if the card shoud be ON when Bumblebee
+</span><span class='line'># server exits.
+</span><span class='line'>TurnCardOffAtExit=false
+</span><span class='line'># The default behavior of '-f' option on optirun. If set to "true", '-f' will
+</span><span class='line'># be ignored.
+</span><span class='line'>NoEcoModeOverride=false
+</span><span class='line'># The Driver used by Bumblebee server. If this value is not set (or empty),
+</span><span class='line'># auto-detection is performed. The available drivers are nvidia and nouveau
+</span><span class='line'># (See also the driver-specific sections below)
+</span><span class='line'>Driver=nvidia
+</span><span class='line'># Directory with a dummy config file to pass as a -configdir to secondary X
+</span><span class='line'>XorgConfDir=/etc/bumblebee/xorg.conf.d
+</span><span class='line'>
+</span><span class='line'>## Client options. Will take effect on the next optirun executed.
+</span><span class='line'>[optirun]
+</span><span class='line'># Acceleration/ rendering bridge, possible values are auto, virtualgl and
+</span><span class='line'># primus.
+</span><span class='line'>Bridge=auto
+</span><span class='line'># The method used for VirtualGL to transport frames between X servers.
+</span><span class='line'># Possible values are proxy, jpeg, rgb, xv and yuv.
+</span><span class='line'>VGLTransport=proxy
+</span><span class='line'># List of paths which are searched for the primus libGL.so.1 when using
+</span><span class='line'># the primus bridge
+</span><span class='line'>PrimusLibraryPath=/usr/lib/x86_64-linux-gnu/primus:/usr/lib/i386-linux-gnu/primus
+</span><span class='line'># Should the program run under optirun even if Bumblebee server or nvidia card
+</span><span class='line'># is not available?
+</span><span class='line'>AllowFallbackToIGC=false
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'># Driver-specific settings are grouped under [driver-NAME]. The sections are
+</span><span class='line'># parsed if the Driver setting in [bumblebeed] is set to NAME (or if auto-
+</span><span class='line'># detection resolves to NAME).
+</span><span class='line'># PMMethod: method to use for saving power by disabling the nvidia card, valid
+</span><span class='line'># values are: auto - automatically detect which PM method to use
+</span><span class='line'>#         bbswitch - new in BB 3, recommended if available
+</span><span class='line'>#       switcheroo - vga_switcheroo method, use at your own risk
+</span><span class='line'>#             none - disable PM completely
+</span><span class='line'># https://github.com/Bumblebee-Project/Bumblebee/wiki/Comparison-of-PM-methods
+</span><span class='line'>
+</span><span class='line'>## Section with nvidia driver specific options, only parsed if Driver=nvidia
+</span><span class='line'>[driver-nvidia]
+</span><span class='line'># Module name to load, defaults to Driver if empty or unset
+</span><span class='line'>KernelDriver=nvidia-331-updates
+</span><span class='line'>PMMethod=auto
+</span><span class='line'># colon-separated path to the nvidia libraries
+</span><span class='line'>LibraryPath=/usr/lib/nvidia-331-updates:/usr/lib32/nvidia-331-updates
+</span><span class='line'># comma-separated path of the directory containing nvidia_drv.so and the
+</span><span class='line'># default Xorg modules path
+</span><span class='line'>XorgModulePath=/usr/lib/nvidia-331-updates/xorg,/usr/lib/xorg/modules
+</span><span class='line'>XorgConfFile=/etc/bumblebee/xorg.conf.nvidia
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'>## Section with nouveau driver specific options, only parsed if Driver=nouveau
+</span><span class='line'>[driver-nouveau]
+</span><span class='line'>KernelDriver=nouveau
+</span><span class='line'>PMMethod=auto
+</span><span class='line'>XorgConfFile=/etc/bumblebee/xorg.conf.nouveau</span></code></pre></td></tr></table></div></figure>
+
+
+<p>save lalu reboot.</p>
+
+<p>setelah reboot cek kembali apakah GPU secondary nya sudah bisa diakses.</p>
+
+<figure class='code'><figcaption><span>Cek </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>optirun bash</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><figcaption><span>Cek Glxgears</span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>optirun glxgears</span></code></pre></td></tr></table></div></figure>
+
+
+<p><img class="center" src="/images/glx.jpg" width="420" height="420" title="glxgears" ></p>
+
+<figure class='code'><figcaption><span>Cek opengl</span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>glxinfo | grep "OpenGL"</span></code></pre></td></tr></table></div></figure>
+
+
+<p><img class="center" src="/images/opengl.jpg" width="420" height="420" title="opengl" ></p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Pramono</span></span>
+
+      
+
+
+
+
+<time class='entry-date' datetime='2014-09-18T20:19:03+07:00'><span class='date'><span class='date-month'>Sep</span> <span class='date-day'>18</span><span class='date-suffix'>th</span>, <span class='date-year'>2014</span></span> <span class='time'>8:19 pm</span></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/optimus/'>optimus</a>, <a class='category' href='/blog/categories/ubuntu/'>ubuntu</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://pramono.github.io/blog/2014/09/18/install-nvidia-gt610-m-aka-optimus-di-ubuntu-14-dot-04/" data-via="ipramono92" data-counturl="http://pramono.github.io/blog/2014/09/18/install-nvidia-gt610-m-aka-optimus-di-ubuntu-14-dot-04/" >Tweet</a>
+  
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2014/09/18/cara-install-octopress-dan-deploy-ke-github/" title="Previous Post: Cara install Octopress dan Deploy ke Github">&laquo; Cara install Octopress dan Deploy ke Github</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2014/09/18/cara-mengatasi-build-warning-layout-nil-pada-octopress/" title="Next Post: Cara mengatasi Build warning : layout nil pada octopress">Cara mengatasi Build warning : layout nil pada octopress &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/09/20/linux-for-skripsi-being/">Linux for Skripsi Being</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/09/20/install-sublime-text-2-plus-crack-di-ubuntu-14-dot-04/">Install Sublime_text 2 Plus Crack Di Ubuntu 14.04</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/09/19/hello-world-pada-python/">Hello World Pada Python</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/09/19/install-geany-ubuntu-14-dot-04/">Install Geany Ubuntu 14.04</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/09/18/cara-mengatasi-build-warning-layout-nil-pada-octopress/">Cara Mengatasi Build Warning : Layout Nil Pada Octopress</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+<section>
+	<h1>Categories</h1>
+	<ul id="categories">
+	<li class='category'><a href='/blog/categories/geany/'>geany (1)</a></li>
+<li class='category'><a href='/blog/categories/github/'>github (2)</a></li>
+<li class='category'><a href='/blog/categories/my-story/'>my story (1)</a></li>
+<li class='category'><a href='/blog/categories/octopress/'>octopress (2)</a></li>
+<li class='category'><a href='/blog/categories/optimus/'>optimus (2)</a></li>
+<li class='category'><a href='/blog/categories/python/'>python (1)</a></li>
+<li class='category'><a href='/blog/categories/slackware/'>slackware (4)</a></li>
+<li class='category'><a href='/blog/categories/sublime/'>sublime (1)</a></li>
+<li class='category'><a href='/blog/categories/ubuntu/'>ubuntu (2)</a></li>
+
+	</ul>
+</section>
+<a class="twitter-timeline" href="https://twitter.com/ipramono92" data-widget-id="513311392019931136">Tweets by @ipramono92</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - Pramono -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'indrapramono';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://pramono.github.io/blog/2014/09/18/install-nvidia-gt610-m-aka-optimus-di-ubuntu-14-dot-04/';
+        var disqus_url = 'http://pramono.github.io/blog/2014/09/18/install-nvidia-gt610-m-aka-optimus-di-ubuntu-14-dot-04/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id; js.async = true;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

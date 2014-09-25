@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: My Story | Pramono]]></title>
+  <link href="http://pramono.github.io/blog/categories/my-story/atom.xml" rel="self"/>
+  <link href="http://pramono.github.io/"/>
+  <updated>2014-09-26T06:17:04+07:00</updated>
+  <id>http://pramono.github.io/</id>
+  <author>
+    <name><![CDATA[Pramono]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Linux for Skripsi Being]]></title>
+    <link href="http://pramono.github.io/blog/2014/09/20/linux-for-skripsi-being/"/>
+    <updated>2014-09-20T19:24:44+07:00</updated>
+    <id>http://pramono.github.io/blog/2014/09/20/linux-for-skripsi-being</id>
+    <content type="html"><![CDATA[<p><img class="left" src="/images/linux.png" width="250" height="250">Hacking ? pasti itulah yang pertama kali kamu fikirkan jika mendengar kata Linux terucap dari bibir manis temanmu yang mencoba merayumu untuk segera beralih menggunakan Sistem Operasi Linux. Sebenarnya  ajakan temanmu itu termasuk perbuatan mulia, karena mengajakmu untuk belajar lebih dalam lagi mengenai Sistem operasi. Lalu yang kedua, pasti kamu beranggapan kalau Linux itu mirip dengan Sistem Operasi pabrikan buatan Bill Gates itu, NO !!! kamu salah besar. Mungkin kamu akan menangis tersedak-sedak saat Game favoritmu tidak bisa berjalan mulus pada Linux dan kamu mulai menyalahkan temanmu yang sialan (red : mulia) itu karena menjebakmu dengan sejuta rayuan gombal.</p>
+
+<!-- more-->
+
+
+<p>Tepatnya pada perkuliahan Semester 2, aku mulai diracuni virus-virus Penguin gemes oleh temanku itu. temanku bak aktivis kampus yang giat menyuarakan “ayo pakai linux” dan sialnya aku terpengaruh orasi nya itu. Pada awal pertemuanku dengan Linux, aku tergoda dengan compiz-nya. Saat itu distro yang pertama ku install adalah Ubuntu Maverick Meerkat 10.10. Pengalaman pertama begitu menggoda dan menyebabkan candu. Dimulai dari pertemuan itu aku jadi lebih sering menghabiskan waktu untuk “ngoprek” si penguin. Tidak lama setelah temanku memperkenalkan Linux nya itu, kebetulan dikampus mengadakan acara seminar yang pembicara nya tidak tanggung-tanggung, yaitu Bpk Onno W Purbo, siapa sih yang tidak kenal beliau, (apaaaaaa.. kamu gak kenal ? coba tanya embah) beliau adalah aktivis atau penggiat Open Source yang terkenal dengan Open BTS nya. Berkat seminar yang diberikan beliau antusiasme-ku semakin tinggi untuk mempelajari sistem operasi Linux. Aku mulai rajin baca-baca artikel yang memuat dokumentasi tentang cara penggunaan Linux dan mencoba membiasakan menyelesaikan tugas kuliah menggunakan Linux, memang tidak mudah tapi lama-kelamaan aku jadi terbiasa menggunakan sistem operasi ini.</p>
+
+<p>Dua tahun berlalu, entah sudah berapa distro yang mampir pada Harddisk komputerku. aku mulai memilah mana distro yang paling cocok ku gunakan untuk menunjang aktivitas ku dalam perkuliahan. Adalah Linux Mint 12 dengan codename Lisa yang kupilih untuk menemaniku menyelesaikan tugas kuliah.</p>
+
+<p>Setahun setelah itu Alhamdulillah aku dibelikan Laptop oleh orangtuaku, tidak perlu menunggu lama, langsung saja ku install laptopku dengan Slackware 14.0, tetapi karena ada tugas kuliah yang memaksaku untuk menggunakan Sistem operasi-nya Bill Gates maka ku jadikan dual OS di laptopku :(</p>
+
+<p>Ditahun ke empat aku memakai Linux dan di tahun terakhir aku kuliah, aku mulai bisa merasakan manfaat dari menggunakan Linux, mulai belajar kernel, mempelajari kompatibilitas hardware sampai compile kernel. Karena sudah mulai masuk tahun terakhir di perkuliahan, aku mulai memikirkan tentang project apa yang nanti akan kubuat sebagai tugas akhir, karena Linux terkenal handal sebagai sistem operasi server maka ku putuskan untuk membuat caching proxy server menggunakan ubuntu server 12.04. Kebersamaan yang sudah terjalin selama 4 tahun ternyata sangat membuahkan hasil, Alhamdulillah aku tidak begitu sulit untuk memahami cara kerja proxy server menggunakan ubuntu server 12.04. Tugas akhir ku dapat terselesaikan dengan tepat waktu.</p>
+
+<p>Setelah menghadapi revisi tugas akhir yang banyaknya tidak karuan, akhirnya pembimbing memberi ACC pada tugas akhir ku. dan di sidangkan pada tanggal 26-08-2014. Berkat dari doa kedua orang tua dan berkat pengalaman menggunakan Linux selama kurang lebih 4 tahun, aku dapat menjawab semua pertanyaan yang diajukan oleh penguji terkait dengan tugas akhirku. dan hari ini 29-08-2014 akan diadakan sidang Yudisium, dan aku dinyatakan LULUS !!! :D</p>
+
+<p>Terimakasih LINUX telah menemaniku sampai akhir menyelesaikan Tugas Akhir.</p>
+]]></content>
+  </entry>
+  
+</feed>

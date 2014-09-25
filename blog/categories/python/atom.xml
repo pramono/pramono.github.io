@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Python | Pramono]]></title>
+  <link href="http://pramono.github.io/blog/categories/python/atom.xml" rel="self"/>
+  <link href="http://pramono.github.io/"/>
+  <updated>2014-09-26T06:17:04+07:00</updated>
+  <id>http://pramono.github.io/</id>
+  <author>
+    <name><![CDATA[Pramono]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Hello World Pada Python]]></title>
+    <link href="http://pramono.github.io/blog/2014/09/19/hello-world-pada-python/"/>
+    <updated>2014-09-19T22:34:49+07:00</updated>
+    <id>http://pramono.github.io/blog/2014/09/19/hello-world-pada-python</id>
+    <content type="html"><![CDATA[<p><img class="left" src="/images/python.png" width="250" height="250" title="Logo Python" > Kalau hello world di C, C++ dan java itu udah mainstream (red : main setrum) nah supaya anti mainstream ayo kita coba menulisnya pake python :v</p>
+
+<p>Python adalah bahasa pemrograman tingkat tinggi yang mendukung OOP serta penggunaan syntax yang cukup sederhana dibanding bahasa pemrograman tingkat tinggi lainnya. Saya juga sedang belajar python jadi kalau tidak ada halangan dan aral melintang, saya akan terus tetap posting eksplorasi saya menggunakan python. :p</p>
+
+<!-- more-->
+
+
+<p>Sebelumnya install dulu geany nya. Yang pakai ubuntu baca nih dimari <a href="http://pramono.github.io/blog/2014/09/19/install-geany-ubuntu-14-dot-04/">cara install geany</a>. Kalau geany nya udah diinstall buka applikasinya.</p>
+
+<p>Langsung KETIKKKKK !! Kayak digambar
+<img class="center" src="/images/python1.png" width="350" height="350"></p>
+
+<p>Kalau udah selesai ngetiknya tekan f8 untuk meng-compile source nya. Kalau gak ada yang error maka akan terlihat seperti ini.
+<img class="center" src="/images/python2.png" width="350" height="350"></p>
+
+<p>Tekan f5 untuk me-run source nya. Maka akan tampil seperti dibawah.
+<img class="center" src="/images/python3.png" width="350" height="350"></p>
+
+<p>Salam Python.</p>
+]]></content>
+  </entry>
+  
+</feed>

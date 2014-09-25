@@ -1,0 +1,506 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Slackware | Pramono]]></title>
+  <link href="http://pramono.github.io/blog/categories/slackware/atom.xml" rel="self"/>
+  <link href="http://pramono.github.io/"/>
+  <updated>2014-09-26T06:17:04+07:00</updated>
+  <id>http://pramono.github.io/</id>
+  <author>
+    <name><![CDATA[Pramono]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Install Kernel 3.8.2 Dari Source Untuk Slackware 14.0]]></title>
+    <link href="http://pramono.github.io/blog/2014/09/18/install-kernel-3-dot-8-2-dari-source-untuk-slackware-14-dot-0/"/>
+    <updated>2014-09-18T06:04:27+07:00</updated>
+    <id>http://pramono.github.io/blog/2014/09/18/install-kernel-3-dot-8-2-dari-source-untuk-slackware-14-dot-0</id>
+    <content type="html"><![CDATA[<p>Selamat malam teman teman, seperti biasa, tulisan yang saya buat bertujuan untuk sekedar mengingatkan saya yang sudah lupaan hehe. Sebenarnya saya hanya iseng-iseng aja mencoba kernel 3.8.2 dengan dalih si kernel baru ini sudah men-support secara default kernel module alx yang di butuhkan LAN Card atheros AR8162 di laptop kesayangan saya, namun apa daya ternyata kernel baru ini belum juga memuat module alx milik atheros AR8162. Tapi apa boleh buat toh kernel nya udah terinstall dan berhasil di boot. Oiya dan satu lagi, problem LAN Card sudah solved, :D nanti saya akan tulis di tulisan selanjutnya.
+Tentu saja kernel baru ini memuat module-module yang lebih baru dan lebih stabil dari kernel sebelumnya, untuk “mengintip” apa saja perubahan yang ada di kernel baru ini bisa lihat di bagian changelog nya.</p>
+
+<!-- more-->
+
+
+<p>Download dulu kernelnya, Kernel download dari <a href="http://mirror.facebook.net/kernel.org/pub/linux/kernel/v3.0/linux-3.8.2.tar.xz">mirror facebook</a>
+kalo sudah di download kemudian buka terminal dan masuk ke dir /usr/src/</p>
+
+<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>root@darkstar:# cd /usr/src</span></code></pre></td></tr></table></div></figure></p>
+
+<p>lalu extrak source kernelnya</p>
+
+<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>root@darkstar:# tar xvf /path/linux-kernel-.tar.xz</span></code></pre></td></tr></table></div></figure></p>
+
+<p><strong>NOTE : path adalah tempat dimana anda menyimpan hasil download-an kernel tersebut</strong></p>
+
+<p>kalo sudah di extrak sekarang buat simbolik link</p>
+
+<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>root@darkstar:# ln -s linux-versi linux</span></code></pre></td></tr></table></div></figure></p>
+
+<p>pindah ke hasil extrak source kernel yang anda download</p>
+
+<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>root@darkstar:# cd linux-versi</span></code></pre></td></tr></table></div></figure></p>
+
+<p>buat konfigurasi baru untuk kernel baru anda, konfigurasi baru ini bisa merujuk pada kernel anda yang sebelumnya</p>
+
+<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>root@darkstar:# cat /boot/config-kernel-yang-andainginkan > .config
+</span><span class='line'>root@darkstar:# make oldconfig
+</span><span class='line'>root@darkstar:# bzImage</span></code></pre></td></tr></table></div></figure></p>
+
+<p>tunggu proses bzImage sampai selesai, karena proses ini memakan waktu yang cukup lama, ya bisa rebus air dulu untuk nyeduh kopi. :p
+kalo sudah selesai, sekarang make modulesnya</p>
+
+<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>root@darkstar:# make modules</span></code></pre></td></tr></table></div></figure></p>
+
+<p>nah kalo airnya sudah mendidih, sekarang giliran nyeduh kopinya, udah beli kan kopinya ? :p karena proses penginstallan modulenya juga memakan waktu yang agak lama.
+Kalo semuanya sudah selesai. Sekarang masuk ke directory</p>
+
+<p><code>/usr/src/linux-versi/tar-install/boot</code></p>
+
+<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>root@darkstar:# cd /usr/src/linux-versi/tar-install/boot</span></code></pre></td></tr></table></div></figure></p>
+
+<p>copykan semuanya kecuali vmlinux ke directory /boot</p>
+
+<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>root@darkstar:# cp -a System.map-&lt;em> config-&lt;/em> vmlinuz-* /boot</span></code></pre></td></tr></table></div></figure></p>
+
+<p>kalau sudah sekarang pindah ke
+<code>/usr/src/linux-versi/tar-install/lib</code></p>
+
+<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>root@darkstar:# cd /usr/src/linux-versi/tar-install/lib</span></code></pre></td></tr></table></div></figure></p>
+
+<p>disana ada directory firmware/ dan modules/ lalu anda copykan saja modulesnya ke /lib</p>
+
+<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>root@darkstar:# cp -r modules /lib/</span></code></pre></td></tr></table></div></figure></p>
+
+<p>sekarang pindah ke /</p>
+
+<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>root@darkstar:# cd /</span></code></pre></td></tr></table></div></figure></p>
+
+<p>sekarang depmod versi kernel yang baru</p>
+
+<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>root@darkstar:# depmod -a versi-kernel-baru</span></code></pre></td></tr></table></div></figure></p>
+
+<p>sekarang buat initrd nya, oiya kalo sebelumnya anda sudah ada initrd.gz maka saya sarankan agar menambahkan parameter -o setelah perintah mkintrd agar initrd yang lama tidak tertimpa dengan initrd yang baru</p>
+
+<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>root@darkstar:# mkinitrd -o NAMAINITRDANDA -c -k 3.8.2-smp -m mbcache:jbd:xfs -f xfs -r /dev/sda6</span></code></pre></td></tr></table></div></figure></p>
+
+<p><strong>NOTE : xfs adalah jenis file sistem yang saya gunakan, dan /dev/sda6 adalah letak root pada Linux Slakcware saya, sesuaikan dengan keadaan mesin anda.</strong></p>
+
+<p>kalau sudah tidak ada yang error sekarang edit lilo nya</p>
+
+<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>root@darkstar:# nano /etc/lilo.conf</span></code></pre></td></tr></table></div></figure></p>
+
+<p>tambahkan baris ini</p>
+
+<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>Linux bootable partition config begins&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;p>image = /boot/vmlinuz-3.8.2-smp
+</span><span class='line'>initrd = /boot/newinitrd
+</span><span class='line'>root = /dev/sda6
+</span><span class='line'>label = Linuxbaru
+</span><span class='line'>read-only&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>Linux bootable partition config ends&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;p></span></code></pre></td></tr></table></div></figure></p>
+
+<p>Selamat mencoba. Happy hacking :D</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Memainkan MP3 Di Amarok Slackware 14.0]]></title>
+    <link href="http://pramono.github.io/blog/2014/09/17/memainkan-mp3-di-amarok-slackware-14-dot-0/"/>
+    <updated>2014-09-17T23:02:11+07:00</updated>
+    <id>http://pramono.github.io/blog/2014/09/17/memainkan-mp3-di-amarok-slackware-14-dot-0</id>
+    <content type="html"><![CDATA[<p>Mungkin beberapa orang sedikit kesulitan ingin memainkan file mp3 nya di slackware menggunakan amarok, sebenarnya sih slackware menyediakan XMSS untuk memainkan mp3. Tapi bagi yang ingin mencicipi amarok pasti akan mengalami sedikit kendala karena tidak bisa memainkan mp3. hal ini terjadi karena pluginnya belum diinstall. Jadi kita hanya cukup menginstall pluginsnya saja</p>
+
+<p>Amarok yang sudah disediakan slackware tidak di lengkapi dengan pluginsnya (kalo dislackware 14.0 sih begitu) kita harus mencari pluginsnya dan membuildnya sendiri. Inilah seninya pake slackware. :v</p>
+
+<p>yang kita butuhkan adalah paket gst-plugins-bad dan gst-plugins-ugly beserta skrip buildnya, kita langsung pergi aja ke TKPeh.</p>
+
+<!-- more-->
+
+
+<p>1.Download gst-plugins-bad dan buildnnya dulu. <a href="http://gstreamer.freedesktop.org/src/gst-plugins-bad/gst-plugins-bad-0.10.23.tar.xz">gst-plugins-bad</a> dan<a href="http://slackbuilds.org/slackbuilds/14.0/multimedia/gst-plugins-bad.tar.gz">Skrip Build</a></p>
+
+<p>2.Download gst-plugins-ugly skrip buildnya, <a href="http://slackbuilds.org/slackbuilds/14.0/multimedia/gst-plugins-ugly.tar.gz">gst-plugins-ugly Skrip Build</a></p>
+
+<p>Kalau udah di install semuanya langsung aja setel lagunya :D</p>
+
+<p><img class="center" src="/images/amarok.jpg" width="420" height="420" title="Amarok" ></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Install VGA NVIDIA Optimus Pada Slackware 14.0]]></title>
+    <link href="http://pramono.github.io/blog/2014/09/17/install-vga-nvidia-optimus-pada-slackware-14-dot-0/"/>
+    <updated>2014-09-17T19:58:49+07:00</updated>
+    <id>http://pramono.github.io/blog/2014/09/17/install-vga-nvidia-optimus-pada-slackware-14-dot-0</id>
+    <content type="html"><![CDATA[<p>Halo selamat malam, pada kali ini saya akan men-share beberapa hal yang harus dilakukan agar VGA NVIDIA yang sudah menggunakan Optimus dapat di gunakan pada slackware 14.0.</p>
+
+<p>sebenernya apa sih Optimus yang di tanamkan pada produk NVIDIA yang baru-baru ini ? Optimus adalah fitur yang di tanam pada produk NVIDIA terbaru, pada tipe apa sebenarnya optimus pertama kali di tanam di NVIDIA saya tidak terlalu mengetahuinya, tapi yang saya gunakan adalah NVIDIA GFORCE GT 610m, pada intinya vendor NVIDIA menanamkan optimus di produknya adalah untuk menghemat daya baterai di Notebook, kenapa ? Karena NVIDIA optimus ini baru akan bekerja jika mesin memerlukannya, misal jika ingin bermain game berat seperti PES,</p>
+
+<!-- more-->
+
+
+<p>menonton video bluray, menjalankan applikasi pembuat graphic yang sudah mendukung fitur 3D seperti blender, jika mesin hanya menggunakan VGA internal bawaan processor, maka kinerja mesin menjadi tidak maksimal, NVIDIA optimus biasanya di gandeng bersama processor intel keluarga “Core i”, pada awalnya saya mencoba driver yang telah disediakan oleh NVIDIA di www.nvidia.com eh ternyata malah gak bisa masuk ke desktop, x_x terpaksa saya harus menghapus xorg nya dan meng-uninstall drivernya. Surfing di berbagai forum slackware akhirnya nemu juga triknya, oiya hampir saja lupa, terimakasih untuk pak Willy yang sudah memberikan saya “wejangan” :D</p>
+
+<p>Pertama download bumblebee-slackbuildnya kita clone dari github dan setelah itu masuk ke direktorinya.</p>
+
+<p><figure class='code'><figcaption><span>Clone Github Bumblebee </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git clone &lt;a href="https://github.com/jgeboski/Bumblebee-SlackBuilds.git">https://github.com/jgeboski/Bumblebee-SlackBuilds.git&lt;/a>
+</span><span class='line'>cd Bumblebee-SlackBuilds</span></code></pre></td></tr></table></div></figure></p>
+
+<p>Download depedensinya
+<figure class='code'><figcaption><span>Depedensi Bumblebee </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>./download.sh</span></code></pre></td></tr></table></div></figure></p>
+
+<p>1.Build dan install: libjpeg-turbo
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>cd libjpeg-turbo&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>./libjpeg-turbo.SlackBuild&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>installpkg /tmp/libjpeg-turbo-1.2.1-i486-1_bbsb.tgz&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;p></span></code></pre></td></tr></table></div></figure></p>
+
+<p>2.Build dan install: VirtualGL
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>cd ../VirtualGL&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>./VirtualGL.SlackBuild&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>installpkg /tmp/VirtualGL-2.3.2-i486-1_bbsb.tgz&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;p></span></code></pre></td></tr></table></div></figure></p>
+
+<p><strong>HAPUS NOUVEAU, BUKA DVD SLACKWARE ANDA, MASUK EXTRA LALU INSTALL</strong> <code>xf86-video-nouveau-blacklist</code>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>installpkg xf86-video-noveau-blacklist.txz&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;p></span></code></pre></td></tr></table></div></figure></p>
+
+<p>3.Build dan install: nvidia-bumblebee
+<figure class='code'><figcaption><span>Install Bumblebee </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>cd ../nvidia-bumblebee&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>./nvidia-bumblebee.SlackBuild&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>installpkg /tmp/nvidia-bumblebee-313.18-i486-1_bbsb.tgz&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;p></span></code></pre></td></tr></table></div></figure></p>
+
+<p>4.Build dan install: nvidia-kernel
+<figure class='code'><figcaption><span>Install Nvidia-Kernel </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>cd ../nvidia-kernel&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>./nvidia-kernel.SlackBuild&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>installpkg /tmp/nvidia-kernel-313.18_3.2.29_smp-x86-1_bbsb.tgz&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;p></span></code></pre></td></tr></table></div></figure></p>
+
+<p>5.Build dan install: bbswitch, libbsd, bumblebee
+<figure class='code'><figcaption><span>Install Lagi </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>cd../bbswitch&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>./bbswitch.SlackBuild&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>upgradepkg &ndash;install-new bbswitch-*.tgz&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>cd ../libbsd&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>./libbsd.SlackBuild&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>upgradepkg &ndash;install-new libbsd-*.tgz&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>cd ../bumblebee&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>./bumblebee.SlackBuild&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>installpkg /tmp/bumblebee-3.0.1-i486-1_bbsb.tgz&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;p></span></code></pre></td></tr></table></div></figure></p>
+
+<p>Sekarang kita siap untuk melakukan beberapa pengaturan pasca instalasi. Paket bumblebeed memberikan kita dengan script rc.bumblebeed di /etc/rc.d mana skrip startup lainnya juga terletak. Rubah permissionnya dan mulai bumblebeednya..</p>
+
+<p><figure class='code'><figcaption><span>chmod Bumblebeed </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>chmod +x /etc/rc.d/rc.bumblebeed&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>/etc/rc.d/rc.bumblebeed start&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;p></span></code></pre></td></tr></table></div></figure></p>
+
+<p>selesai, sekarang coba jalankan perintah di bawah.</p>
+
+<p><figure class='code'><figcaption><span>chmod Bumblebeed </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ optirun glxspheres</span></code></pre></td></tr></table></div></figure></p>
+
+<p><img class="center" src="/images/bumblebee.jpeg" width="500" height="500" title="Bumblebee Berhasil" ></p>
+
+<p>jika sukses maka akan terlihat seperti diatas. lalu cek apakah benar VGA nya sudah bisa di kenali kernelnya.</p>
+
+<p><figure class='code'><figcaption><span>cek </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>glxinfo | grep “OpenGL”&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;p></span></code></pre></td></tr></table></div></figure></p>
+
+<p><img class="center" src="/images/glxinfo.jpeg" width="500" height="500" title="Cek glxinfo" ></p>
+
+<p><strong>NB : JIKA TIDAK BISA MENJALANKAN PERINTAH  </strong>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>optirun bash&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;p></span></code></pre></td></tr></table></div></figure></p>
+
+<p>Jalankan dulu skrip bumblebee nya</p>
+
+<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>}# /etc/rc.d/rc.bumblebeed start</span></code></pre></td></tr></table></div></figure></p>
+
+<p>Semoga bermanfaat, kalo ada yang error Komen saja disiini.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Mempercepat Proses Booting Di Slackware 14.0]]></title>
+    <link href="http://pramono.github.io/blog/2014/09/17/mempercepat-proses-booting-di-slackware-14-dot-0/"/>
+    <updated>2014-09-17T11:22:09+07:00</updated>
+    <id>http://pramono.github.io/blog/2014/09/17/mempercepat-proses-booting-di-slackware-14-dot-0</id>
+    <content type="html"><![CDATA[<p>proses booting yang di lakukan slackware 14.0 memang bisa di katakan cukup lama, karena melakukan check bios terlebih dahulu, hal ini tentu saja cukup mengganggu (buat saya) untuk orang yang tidak sabaran (termasuk saya) hehehehe.</p>
+
+<p>Pada distro linux lain seperti fedora, terkadang juga melakukan proses booting yang lama, pada fedora, cukup dengan mematikan service yang tidak di gunakan. Sebenarnya cara yang sama juga saya lakukan pada slackware 14.0 tapi hasilny nihil. sempet baca-baca di forum, ternyata banyak juga orang yang mengeluh lamanya proses booting di slackware 14.0. Dan akhirnya saya menemukan juga solved problemnya. Ada beberapa cara agar proses booting menjadi cepat yaitu <!-- more --></p>
+
+<p>1.menambahkan <strong>compact</strong> pada skrip LILO</p>
+
+<p>2.menonaktifkan proses yang tidak di perlukan pada /etc/rc.d/rc.M </p>
+
+<p>3.menonaktifkan openssh</p>
+
+<p>Oke langsung aja.</p>
+
+<p>1) Menambahkan <strong>compact</strong> pada skrip LILO, Buka konsole lalu edit /etc/lilo.conf</p>
+
+<p><figure class='code'><figcaption><span>Perintah Terminal </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>nano /etc/lilo.conf</span></code></pre></td></tr></table></div></figure></p>
+
+<p>lalu tambahkan <strong>compact</strong> pada baris setelah baris <code>boot = /dev/sda</code></p>
+
+<p>save, lalu keluar dari nano.</p>
+
+<p>2) Menonaktifkan proses yang tidak di perlukan pada <code>/etc/rc.d/rc.M</code> buka konsole ketik</p>
+
+<p><figure class='code'><figcaption><span>Perintah Terminal 2 </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>nano /etc/rc.d/rc.M</span></code></pre></td></tr></table></div></figure></p>
+
+<p>Cari baris
+<code># Update any existing icon cache files</code> nonaktifkan dengan memberi tanda tagar sampai baris berikut.</p>
+
+<p><figure class='code'><figcaption><span>Skrip </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>Update mime database:&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>if [ -x /usr/bin/update-mime-database -a -d /usr/share/mime ]; then&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>echo &ldquo;Updating MIME database: /usr/bin/update-mime-database /usr/share/mime &amp;&rdquo;&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>/usr/bin/update-mime-database /usr/share/mime 1> /dev/null 2> /dev/null &amp;&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>fi&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;p></span></code></pre></td></tr></table></div></figure></p>
+
+<p>Seperti pada gambar</p>
+
+<p><img class="center" src="/images/BOOTING.jpg" width="500" height="500" title="Booting Cepat" ></p>
+
+<p>satu jurus lagi nih supaya booting slackware mu cepet, wussss wusss.</p>
+
+<p>3) menonaktifkan openssh, Back to konsole, jalankan perintah
+<figure class='code'><figcaption><span>Perintah Terminal 2 </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>nano /etc/rc.d/rc.inet2</span></code></pre></td></tr></table></div></figure></p>
+
+<p>beri tanda Tagar pada baris ini</p>
+
+<p><figure class='code'><figcaption><span>Perintah Terminal 2 </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>Start the OpenSSH SSH daemon:&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>if [ -x /etc/rc.d/rc.sshd ]; then&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>echo &ldquo;Starting OpenSSH SSH daemon: /usr/sbin/sshd&rdquo;&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>/etc/rc.d/rc.sshd start&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;p>fi</span></code></pre></td></tr></table></div></figure></p>
+
+<p>Jika sudah, hasilnya akan terlihat seperti gambar.</p>
+
+<p><img class="center" src="/images/openssh.jpeg" width="500" height="500" title="Booting Sangat Cepat" ></p>
+
+<p>semoga bermanfaat.</p>
+]]></content>
+  </entry>
+  
+</feed>

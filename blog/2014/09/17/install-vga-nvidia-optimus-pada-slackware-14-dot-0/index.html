@@ -1,0 +1,393 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Install VGA NVIDIA Optimus Pada Slackware 14.0 - Pramono</title>
+  <meta name="author" content="Pramono">
+
+  
+  <meta name="description" content="Halo selamat malam, pada kali ini saya akan men-share beberapa hal yang harus dilakukan agar VGA NVIDIA yang sudah menggunakan Optimus dapat di &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://pramono.github.io/blog/2014/09/17/install-vga-nvidia-optimus-pada-slackware-14-dot-0">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Pramono" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Pramono</a></h1>
+  
+    <h2>A blogging framework for stupid author.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:pramono.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Install VGA NVIDIA Optimus Pada Slackware 14.0</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2014-09-17T19:58:49+07:00'><span class='date'><span class='date-month'>Sep</span> <span class='date-day'>17</span><span class='date-suffix'>th</span>, <span class='date-year'>2014</span></span> <span class='time'>7:58 pm</span></time>
+        
+           | <a href="#disqus_thread"
+             data-disqus-identifier="http://pramono.github.io">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>Halo selamat malam, pada kali ini saya akan men-share beberapa hal yang harus dilakukan agar VGA NVIDIA yang sudah menggunakan Optimus dapat di gunakan pada slackware 14.0.</p>
+
+<p>sebenernya apa sih Optimus yang di tanamkan pada produk NVIDIA yang baru-baru ini ? Optimus adalah fitur yang di tanam pada produk NVIDIA terbaru, pada tipe apa sebenarnya optimus pertama kali di tanam di NVIDIA saya tidak terlalu mengetahuinya, tapi yang saya gunakan adalah NVIDIA GFORCE GT 610m, pada intinya vendor NVIDIA menanamkan optimus di produknya adalah untuk menghemat daya baterai di Notebook, kenapa ? Karena NVIDIA optimus ini baru akan bekerja jika mesin memerlukannya, misal jika ingin bermain game berat seperti PES,</p>
+
+<!-- more-->
+
+
+<p>menonton video bluray, menjalankan applikasi pembuat graphic yang sudah mendukung fitur 3D seperti blender, jika mesin hanya menggunakan VGA internal bawaan processor, maka kinerja mesin menjadi tidak maksimal, NVIDIA optimus biasanya di gandeng bersama processor intel keluarga “Core i”, pada awalnya saya mencoba driver yang telah disediakan oleh NVIDIA di www.nvidia.com eh ternyata malah gak bisa masuk ke desktop, x_x terpaksa saya harus menghapus xorg nya dan meng-uninstall drivernya. Surfing di berbagai forum slackware akhirnya nemu juga triknya, oiya hampir saja lupa, terimakasih untuk pak Willy yang sudah memberikan saya “wejangan” :D</p>
+
+<p>Pertama download bumblebee-slackbuildnya kita clone dari github dan setelah itu masuk ke direktorinya.</p>
+
+<figure class='code'><figcaption><span>Clone Github Bumblebee </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git clone https://github.com/jgeboski/Bumblebee-SlackBuilds.git
+</span><span class='line'>cd Bumblebee-SlackBuilds</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Download depedensinya</p>
+
+<figure class='code'><figcaption><span>Depedensi Bumblebee </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>./download.sh</span></code></pre></td></tr></table></div></figure>
+
+
+<p>1.Build dan install: libjpeg-turbo</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'># cd libjpeg-turbo
+</span><span class='line'># ./libjpeg-turbo.SlackBuild
+</span><span class='line'># installpkg /tmp/libjpeg-turbo-1.2.1-i486-1_bbsb.tgz</span></code></pre></td></tr></table></div></figure>
+
+
+<p>2.Build dan install: VirtualGL</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'># cd ../VirtualGL
+</span><span class='line'># ./VirtualGL.SlackBuild
+</span><span class='line'># installpkg /tmp/VirtualGL-2.3.2-i486-1_bbsb.tgz</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>HAPUS NOUVEAU, BUKA DVD SLACKWARE ANDA, MASUK EXTRA LALU INSTALL</strong> <code>xf86-video-nouveau-blacklist</code></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>#installpkg xf86-video-noveau-blacklist.txz</span></code></pre></td></tr></table></div></figure>
+
+
+<p>3.Build dan install: nvidia-bumblebee</p>
+
+<figure class='code'><figcaption><span>Install Bumblebee </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'># cd ../nvidia-bumblebee
+</span><span class='line'># ./nvidia-bumblebee.SlackBuild
+</span><span class='line'># installpkg /tmp/nvidia-bumblebee-313.18-i486-1_bbsb.tgz</span></code></pre></td></tr></table></div></figure>
+
+
+<p>4.Build dan install: nvidia-kernel</p>
+
+<figure class='code'><figcaption><span>Install Nvidia-Kernel </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'># cd ../nvidia-kernel
+</span><span class='line'># ./nvidia-kernel.SlackBuild
+</span><span class='line'># installpkg /tmp/nvidia-kernel-313.18_3.2.29_smp-x86-1_bbsb.tgz</span></code></pre></td></tr></table></div></figure>
+
+
+<p>5.Build dan install: bbswitch, libbsd, bumblebee</p>
+
+<figure class='code'><figcaption><span>Install Lagi </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'># cd../bbswitch
+</span><span class='line'># ./bbswitch.SlackBuild
+</span><span class='line'># upgradepkg --install-new bbswitch-*.tgz
+</span><span class='line'># cd ../libbsd
+</span><span class='line'># ./libbsd.SlackBuild
+</span><span class='line'># upgradepkg --install-new libbsd-*.tgz
+</span><span class='line'># cd ../bumblebee
+</span><span class='line'># ./bumblebee.SlackBuild
+</span><span class='line'># installpkg /tmp/bumblebee-3.0.1-i486-1_bbsb.tgz</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Sekarang kita siap untuk melakukan beberapa pengaturan pasca instalasi. Paket bumblebeed memberikan kita dengan script rc.bumblebeed di /etc/rc.d mana skrip startup lainnya juga terletak. Rubah permissionnya dan mulai bumblebeednya..</p>
+
+<figure class='code'><figcaption><span>chmod Bumblebeed </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'># chmod +x /etc/rc.d/rc.bumblebeed
+</span><span class='line'># /etc/rc.d/rc.bumblebeed start</span></code></pre></td></tr></table></div></figure>
+
+
+<p>selesai, sekarang coba jalankan perintah di bawah.</p>
+
+<figure class='code'><figcaption><span>chmod Bumblebeed </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ optirun glxspheres</span></code></pre></td></tr></table></div></figure>
+
+
+<p><img class="center" src="/images/bumblebee.jpeg" width="500" height="500" title="Bumblebee Berhasil" ></p>
+
+<p>jika sukses maka akan terlihat seperti diatas. lalu cek apakah benar VGA nya sudah bisa di kenali kernelnya.</p>
+
+<figure class='code'><figcaption><span>cek </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'># glxinfo | grep “OpenGL”</span></code></pre></td></tr></table></div></figure>
+
+
+<p><img class="center" src="/images/glxinfo.jpeg" width="500" height="500" title="Cek glxinfo" ></p>
+
+<p><strong>NB : JIKA TIDAK BISA MENJALANKAN PERINTAH  </strong></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>#optirun bash</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Jalankan dulu skrip bumblebee nya</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>}# /etc/rc.d/rc.bumblebeed start</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Semoga bermanfaat, kalo ada yang error Komen saja disiini.</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Pramono</span></span>
+
+      
+
+
+
+
+<time class='entry-date' datetime='2014-09-17T19:58:49+07:00'><span class='date'><span class='date-month'>Sep</span> <span class='date-day'>17</span><span class='date-suffix'>th</span>, <span class='date-year'>2014</span></span> <span class='time'>7:58 pm</span></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/optimus/'>optimus</a>, <a class='category' href='/blog/categories/slackware/'>slackware</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://pramono.github.io/blog/2014/09/17/install-vga-nvidia-optimus-pada-slackware-14-dot-0/" data-via="ipramono92" data-counturl="http://pramono.github.io/blog/2014/09/17/install-vga-nvidia-optimus-pada-slackware-14-dot-0/" >Tweet</a>
+  
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2014/09/17/mempercepat-proses-booting-di-slackware-14-dot-0/" title="Previous Post: Mempercepat proses booting di Slackware 14.0">&laquo; Mempercepat proses booting di Slackware 14.0</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2014/09/17/memainkan-mp3-di-amarok-slackware-14-dot-0/" title="Next Post: Memainkan MP3 di Amarok Slackware 14.0">Memainkan MP3 di Amarok Slackware 14.0 &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/09/20/linux-for-skripsi-being/">Linux for Skripsi Being</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/09/20/install-sublime-text-2-plus-crack-di-ubuntu-14-dot-04/">Install Sublime_text 2 Plus Crack Di Ubuntu 14.04</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/09/19/hello-world-pada-python/">Hello World Pada Python</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/09/19/install-geany-ubuntu-14-dot-04/">Install Geany Ubuntu 14.04</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/09/18/cara-mengatasi-build-warning-layout-nil-pada-octopress/">Cara Mengatasi Build Warning : Layout Nil Pada Octopress</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+<section>
+	<h1>Categories</h1>
+	<ul id="categories">
+	<li class='category'><a href='/blog/categories/geany/'>geany (1)</a></li>
+<li class='category'><a href='/blog/categories/github/'>github (2)</a></li>
+<li class='category'><a href='/blog/categories/my-story/'>my story (1)</a></li>
+<li class='category'><a href='/blog/categories/octopress/'>octopress (2)</a></li>
+<li class='category'><a href='/blog/categories/optimus/'>optimus (2)</a></li>
+<li class='category'><a href='/blog/categories/python/'>python (1)</a></li>
+<li class='category'><a href='/blog/categories/slackware/'>slackware (4)</a></li>
+<li class='category'><a href='/blog/categories/sublime/'>sublime (1)</a></li>
+<li class='category'><a href='/blog/categories/ubuntu/'>ubuntu (2)</a></li>
+
+	</ul>
+</section>
+<a class="twitter-timeline" href="https://twitter.com/ipramono92" data-widget-id="513311392019931136">Tweets by @ipramono92</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - Pramono -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'indrapramono';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://pramono.github.io/blog/2014/09/17/install-vga-nvidia-optimus-pada-slackware-14-dot-0/';
+        var disqus_url = 'http://pramono.github.io/blog/2014/09/17/install-vga-nvidia-optimus-pada-slackware-14-dot-0/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id; js.async = true;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

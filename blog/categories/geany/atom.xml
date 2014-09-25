@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Geany | Pramono]]></title>
+  <link href="http://pramono.github.io/blog/categories/geany/atom.xml" rel="self"/>
+  <link href="http://pramono.github.io/"/>
+  <updated>2014-09-26T06:17:04+07:00</updated>
+  <id>http://pramono.github.io/</id>
+  <author>
+    <name><![CDATA[Pramono]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Install Geany Ubuntu 14.04]]></title>
+    <link href="http://pramono.github.io/blog/2014/09/19/install-geany-ubuntu-14-dot-04/"/>
+    <updated>2014-09-19T21:45:19+07:00</updated>
+    <id>http://pramono.github.io/blog/2014/09/19/install-geany-ubuntu-14-dot-04</id>
+    <content type="html"><![CDATA[<p>Ada yang sudah tau geany ? Geany adalah applikasi open source yang digunakan untuk meng-kompile bahasa C, C++, Java bahkan pyhton. Keren ya, kalo pakai windows untuk meng-kompile bahasa C, C++ biasanya pakai borland C ya. Kalau java pakai netbeans. Kalau python adalah dengan cara menulis syntax nya dahulu menggunakan notepad atau text editor yang ada di windows lalu di eksekusi menggunakan CMD. Atau di windows ada applikasi untuk menulis python ? Saya belum tau. :v</p>
+
+<p>Caranya mudah. Langung saja</p>
+
+<p><figure class='code'><figcaption><span>Masuk sebagai root </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo -s</span></code></pre></td></tr></table></div></figure></p>
+
+<p><figure class='code'><figcaption><span>Install geany </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo apt-get install geany</span></code></pre></td></tr></table></div></figure></p>
+
+<p>Otomatis geany langsung terinstall di ubuntu kamu.</p>
+]]></content>
+  </entry>
+  
+</feed>

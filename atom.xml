@@ -1,0 +1,904 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Pramono]]></title>
+  <link href="http://pramono.github.io/atom.xml" rel="self"/>
+  <link href="http://pramono.github.io/"/>
+  <updated>2014-09-26T06:17:04+07:00</updated>
+  <id>http://pramono.github.io/</id>
+  <author>
+    <name><![CDATA[Pramono]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Linux for Skripsi Being]]></title>
+    <link href="http://pramono.github.io/blog/2014/09/20/linux-for-skripsi-being/"/>
+    <updated>2014-09-20T19:24:44+07:00</updated>
+    <id>http://pramono.github.io/blog/2014/09/20/linux-for-skripsi-being</id>
+    <content type="html"><![CDATA[<p><img class="left" src="http://pramono.github.io/images/linux.png" width="250" height="250">Hacking ? pasti itulah yang pertama kali kamu fikirkan jika mendengar kata Linux terucap dari bibir manis temanmu yang mencoba merayumu untuk segera beralih menggunakan Sistem Operasi Linux. Sebenarnya  ajakan temanmu itu termasuk perbuatan mulia, karena mengajakmu untuk belajar lebih dalam lagi mengenai Sistem operasi. Lalu yang kedua, pasti kamu beranggapan kalau Linux itu mirip dengan Sistem Operasi pabrikan buatan Bill Gates itu, NO !!! kamu salah besar. Mungkin kamu akan menangis tersedak-sedak saat Game favoritmu tidak bisa berjalan mulus pada Linux dan kamu mulai menyalahkan temanmu yang sialan (red : mulia) itu karena menjebakmu dengan sejuta rayuan gombal.</p>
+
+<!-- more-->
+
+
+<p>Tepatnya pada perkuliahan Semester 2, aku mulai diracuni virus-virus Penguin gemes oleh temanku itu. temanku bak aktivis kampus yang giat menyuarakan “ayo pakai linux” dan sialnya aku terpengaruh orasi nya itu. Pada awal pertemuanku dengan Linux, aku tergoda dengan compiz-nya. Saat itu distro yang pertama ku install adalah Ubuntu Maverick Meerkat 10.10. Pengalaman pertama begitu menggoda dan menyebabkan candu. Dimulai dari pertemuan itu aku jadi lebih sering menghabiskan waktu untuk “ngoprek” si penguin. Tidak lama setelah temanku memperkenalkan Linux nya itu, kebetulan dikampus mengadakan acara seminar yang pembicara nya tidak tanggung-tanggung, yaitu Bpk Onno W Purbo, siapa sih yang tidak kenal beliau, (apaaaaaa.. kamu gak kenal ? coba tanya embah) beliau adalah aktivis atau penggiat Open Source yang terkenal dengan Open BTS nya. Berkat seminar yang diberikan beliau antusiasme-ku semakin tinggi untuk mempelajari sistem operasi Linux. Aku mulai rajin baca-baca artikel yang memuat dokumentasi tentang cara penggunaan Linux dan mencoba membiasakan menyelesaikan tugas kuliah menggunakan Linux, memang tidak mudah tapi lama-kelamaan aku jadi terbiasa menggunakan sistem operasi ini.</p>
+
+<p>Dua tahun berlalu, entah sudah berapa distro yang mampir pada Harddisk komputerku. aku mulai memilah mana distro yang paling cocok ku gunakan untuk menunjang aktivitas ku dalam perkuliahan. Adalah Linux Mint 12 dengan codename Lisa yang kupilih untuk menemaniku menyelesaikan tugas kuliah.</p>
+
+<p>Setahun setelah itu Alhamdulillah aku dibelikan Laptop oleh orangtuaku, tidak perlu menunggu lama, langsung saja ku install laptopku dengan Slackware 14.0, tetapi karena ada tugas kuliah yang memaksaku untuk menggunakan Sistem operasi-nya Bill Gates maka ku jadikan dual OS di laptopku :(</p>
+
+<p>Ditahun ke empat aku memakai Linux dan di tahun terakhir aku kuliah, aku mulai bisa merasakan manfaat dari menggunakan Linux, mulai belajar kernel, mempelajari kompatibilitas hardware sampai compile kernel. Karena sudah mulai masuk tahun terakhir di perkuliahan, aku mulai memikirkan tentang project apa yang nanti akan kubuat sebagai tugas akhir, karena Linux terkenal handal sebagai sistem operasi server maka ku putuskan untuk membuat caching proxy server menggunakan ubuntu server 12.04. Kebersamaan yang sudah terjalin selama 4 tahun ternyata sangat membuahkan hasil, Alhamdulillah aku tidak begitu sulit untuk memahami cara kerja proxy server menggunakan ubuntu server 12.04. Tugas akhir ku dapat terselesaikan dengan tepat waktu.</p>
+
+<p>Setelah menghadapi revisi tugas akhir yang banyaknya tidak karuan, akhirnya pembimbing memberi ACC pada tugas akhir ku. dan di sidangkan pada tanggal 26-08-2014. Berkat dari doa kedua orang tua dan berkat pengalaman menggunakan Linux selama kurang lebih 4 tahun, aku dapat menjawab semua pertanyaan yang diajukan oleh penguji terkait dengan tugas akhirku. dan hari ini 29-08-2014 akan diadakan sidang Yudisium, dan aku dinyatakan LULUS !!! :D</p>
+
+<p>Terimakasih LINUX telah menemaniku sampai akhir menyelesaikan Tugas Akhir.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Install Sublime_text 2 Plus Crack Di Ubuntu 14.04]]></title>
+    <link href="http://pramono.github.io/blog/2014/09/20/install-sublime-text-2-plus-crack-di-ubuntu-14-dot-04/"/>
+    <updated>2014-09-20T19:04:27+07:00</updated>
+    <id>http://pramono.github.io/blog/2014/09/20/install-sublime-text-2-plus-crack-di-ubuntu-14-dot-04</id>
+    <content type="html"><![CDATA[<p>Malam minggu yang sepi ini karna jomblo ngenes jadi malam ini saya dedikasikan untuk nulis sedikit tutorial install sublime text 2 di ubuntu 14.04 plus crack nya. Entah kenapa ya sublime text itu setau saya open source tapi kenapa butuh license juga. Apa ini open source nya microsoft ya. Hahaha :v</p>
+
+<p>Kalau kamu pakai ubuntu 14.04 gampang. Tinggal tambah repo update repo terus install..</p>
+
+<p>Pertama tambahkan dulu repo tambahan untuk sublime_text 2.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo add-apt-repository ppa:webupd8team/sublime-text-2
+</span><span class='line'>sudo apt-get update
+</span><span class='line'>sudo apt-get install sublime-text</span></code></pre></td></tr></table></div></figure>
+
+
+<!-- more-->
+
+
+<p>Kalau semua sudah selesai langsung mainkan sublime nya.</p>
+
+<p><img class="center" src="http://pramono.github.io/images/sublime.png" width="350" height="250" title="sublime" ></p>
+
+<p>Terus import licensenya, tab ke help terus import, Copas semua licensenya di bawah.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>—– BEGIN LICENSE —–
+</span><span class='line'>Alexander
+</span><span class='line'>Single User License
+</span><span class='line'>EA7E-814345
+</span><span class='line'>51F47F09 4EAB1285 7827EFF0 8B1207DC
+</span><span class='line'>A76A6EA3 E1A1CA7A DC1F2703 14,897,784
+</span><span class='line'>8EDC1C82 3F2A58B9 1C0C8B24 67686432
+</span><span class='line'>281245B3 6233DE5C ADC5C2F9 61FB8A04
+</span><span class='line'>171B63EF 86BA423F 6AC884FD 3273A7AA
+</span><span class='line'>5F50A6DB CE7859AE D62D2B37 AEEDD8C2
+</span><span class='line'>078A8A20 70EEA791 84F48C1E 8ABA7DEB
+</span><span class='line'>0B3907C0 C9A3523B 0091A045 6F67AED8
+</span><span class='line'>—— END LICENSE ——</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Hello World Pada Python]]></title>
+    <link href="http://pramono.github.io/blog/2014/09/19/hello-world-pada-python/"/>
+    <updated>2014-09-19T22:34:49+07:00</updated>
+    <id>http://pramono.github.io/blog/2014/09/19/hello-world-pada-python</id>
+    <content type="html"><![CDATA[<p><img class="left" src="http://pramono.github.io/images/python.png" width="250" height="250" title="Logo Python" > Kalau hello world di C, C++ dan java itu udah mainstream (red : main setrum) nah supaya anti mainstream ayo kita coba menulisnya pake python :v</p>
+
+<p>Python adalah bahasa pemrograman tingkat tinggi yang mendukung OOP serta penggunaan syntax yang cukup sederhana dibanding bahasa pemrograman tingkat tinggi lainnya. Saya juga sedang belajar python jadi kalau tidak ada halangan dan aral melintang, saya akan terus tetap posting eksplorasi saya menggunakan python. :p</p>
+
+<!-- more-->
+
+
+<p>Sebelumnya install dulu geany nya. Yang pakai ubuntu baca nih dimari <a href="http://pramono.github.io/blog/2014/09/19/install-geany-ubuntu-14-dot-04/">cara install geany</a>. Kalau geany nya udah diinstall buka applikasinya.</p>
+
+<p>Langsung KETIKKKKK !! Kayak digambar
+<img class="center" src="http://pramono.github.io/images/python1.png" width="350" height="350"></p>
+
+<p>Kalau udah selesai ngetiknya tekan f8 untuk meng-compile source nya. Kalau gak ada yang error maka akan terlihat seperti ini.
+<img class="center" src="http://pramono.github.io/images/python2.png" width="350" height="350"></p>
+
+<p>Tekan f5 untuk me-run source nya. Maka akan tampil seperti dibawah.
+<img class="center" src="http://pramono.github.io/images/python3.png" width="350" height="350"></p>
+
+<p>Salam Python.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Install Geany Ubuntu 14.04]]></title>
+    <link href="http://pramono.github.io/blog/2014/09/19/install-geany-ubuntu-14-dot-04/"/>
+    <updated>2014-09-19T21:45:19+07:00</updated>
+    <id>http://pramono.github.io/blog/2014/09/19/install-geany-ubuntu-14-dot-04</id>
+    <content type="html"><![CDATA[<p>Ada yang sudah tau geany ? Geany adalah applikasi open source yang digunakan untuk meng-kompile bahasa C, C++, Java bahkan pyhton. Keren ya, kalo pakai windows untuk meng-kompile bahasa C, C++ biasanya pakai borland C ya. Kalau java pakai netbeans. Kalau python adalah dengan cara menulis syntax nya dahulu menggunakan notepad atau text editor yang ada di windows lalu di eksekusi menggunakan CMD. Atau di windows ada applikasi untuk menulis python ? Saya belum tau. :v</p>
+
+<p>Caranya mudah. Langung saja</p>
+
+<figure class='code'><figcaption><span>Masuk sebagai root </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo -s</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><figcaption><span>Install geany </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo apt-get install geany</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Otomatis geany langsung terinstall di ubuntu kamu.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Cara Mengatasi Build Warning : Layout Nil Pada Octopress]]></title>
+    <link href="http://pramono.github.io/blog/2014/09/18/cara-mengatasi-build-warning-layout-nil-pada-octopress/"/>
+    <updated>2014-09-18T22:09:08+07:00</updated>
+    <id>http://pramono.github.io/blog/2014/09/18/cara-mengatasi-build-warning-layout-nil-pada-octopress</id>
+    <content type="html"><![CDATA[<p>Half time Indonesia u-19 vs Valencia B. Skor sementara 1-1 Gol Valencia B di ciptakan oleh Castillajo sedangkan gol balasan Indonesia di ciptakan oleh sang kapten Evan dimas.</p>
+
+<p>Kembali ke judul. Tulisan <code>Build warning : layout nil</code> muncul ketika saya mencoba mengganti tema default octopress. Sempat bingung karena semua tema yang saya coba tetap saja menghasilkan tulisan error tersebut. Tapi anehnya kalo saya kembalikan memakai tema default octopress tulisan tersebut tidak ada, ajaib kan. Coba liat gambar dibawah, kira-kira seperti itu errornya.</p>
+
+<p><img class="center" src="http://pramono.github.io/images/nil.jpg" width="350" height="350"></p>
+
+<!-- more-->
+
+
+<p>Setelah googling ternyata pada jekyll versi 2.4.0 tidak bisa menggunakan syntak layout : nil. Lalu solusinya adalah mengganti nil dengan null.</p>
+
+<p>Yang harus di ganti terdapat di skrip <code>atom.xml</code> dan <code>category_feed.xml</code>. Skrip <code>atom.xml</code> berada di directory <code>/source/atom.xml</code>, sedangkan skrip <code>category_feed.xml</code> ada di <code>source/_includes/custom/category_feed.xml</code>.
+Save keduanya lalu generate. Dan lihat hasilnya :D</p>
+
+<p><img class="center" src="http://pramono.github.io/images/generate.jpg" width="420" height="420"></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Install NVIDIA GT610m Aka Optimus Di Ubuntu 14.04]]></title>
+    <link href="http://pramono.github.io/blog/2014/09/18/install-nvidia-gt610-m-aka-optimus-di-ubuntu-14-dot-04/"/>
+    <updated>2014-09-18T20:19:03+07:00</updated>
+    <id>http://pramono.github.io/blog/2014/09/18/install-nvidia-gt610-m-aka-optimus-di-ubuntu-14-dot-04</id>
+    <content type="html"><![CDATA[<p>Pada kesempatan ini saya akan men-share cara install Nvidia Optimus pada ubuntu. Khusus untuk ubuntu prosesnya gak ribet ribet amat. cuma tinggal tambahin repo trus apt-get install :p</p>
+
+<p>tambahkan repo universe dan multiverse</p>
+
+<figure class='code'><figcaption><span>Universe & Multiverse </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo add-apt-repository "deb http://archive.ubuntu.com/ubuntu $(lsb_release -sc) main universe restricted multiverse"
+</span><span class='line'>
+</span><span class='line'>sudo add-apt-repository "deb http://archive.ubuntu.com/ubuntu $(lsb_release -sc) universe"
+</span><span class='line'>
+</span><span class='line'>sudo add-apt-repository "deb http://archive.ubuntu.com/ubuntu $(lsb_release -sc) universe"
+</span><span class='line'>
+</span><span class='line'>sudo add-apt-repository "deb http://archive.ubuntu.com/ubuntu $(lsb_release -sc) main universe restricted multiverse"
+</span><span class='line'>
+</span><span class='line'>sudo add-apt-repository "deb http://archive.canonical.com/ubuntu $(lsb_release -sc) partner"</span></code></pre></td></tr></table></div></figure>
+
+
+<!-- more-->
+
+
+<p>Lalu update reponya dan install bumblebee nya serta reboot.</p>
+
+<figure class='code'><figcaption><span>Terminal </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo apt-get update
+</span><span class='line'>
+</span><span class='line'>sudo apt-get install mesa-utils
+</span><span class='line'>
+</span><span class='line'>sudo apt-get install bumblebee bumblebee-nvidia primus linux-headers-generic
+</span><span class='line'>
+</span><span class='line'>reboot</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Kalau sudah di install coba akses GPU secondary nya.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>optirun bash</span></code></pre></td></tr></table></div></figure>
+
+
+<p>kalau terjadi error</p>
+
+<p><code>[ERROR]Cannot access secondary GPU - error: [XORG] (EE) NVIDIA(0): Failed to initialize the NVIDIA GPU at PCI:1:0:0. Please[ERROR]Aborting because fallback start is disabled</code></p>
+
+<p>lakukan beberapa langkah dibawah ini.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo apt-get install nvidia-331-updates</span></code></pre></td></tr></table></div></figure>
+
+
+<p>edit skrip konfigurasi bumblebee <code>sudo gedit /etc/bumblebee/bumblebee.conf</code></p>
+
+<p>ganti konfigurasinya menggunakan skrip dibawah, sebelumnya backup dahulu skrip konfigurasi defaultnya. untuk jaga-jaga</p>
+
+<figure class='code'><figcaption><span>Konfigurasi Bumblebee </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+<span class='line-number'>53</span>
+<span class='line-number'>54</span>
+<span class='line-number'>55</span>
+<span class='line-number'>56</span>
+<span class='line-number'>57</span>
+<span class='line-number'>58</span>
+<span class='line-number'>59</span>
+<span class='line-number'>60</span>
+<span class='line-number'>61</span>
+<span class='line-number'>62</span>
+<span class='line-number'>63</span>
+<span class='line-number'>64</span>
+<span class='line-number'>65</span>
+<span class='line-number'>66</span>
+<span class='line-number'>67</span>
+<span class='line-number'>68</span>
+<span class='line-number'>69</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'># Configuration file for Bumblebee. Values should **not** be put between quotes
+</span><span class='line'>
+</span><span class='line'>## Server options. Any change made in this section will need a server restart
+</span><span class='line'># to take effect.
+</span><span class='line'>[bumblebeed]
+</span><span class='line'># The secondary Xorg server DISPLAY number
+</span><span class='line'>VirtualDisplay=:8
+</span><span class='line'># Should the unused Xorg server be kept running? Set this to true if waiting
+</span><span class='line'># for X to be ready is too long and don't need power management at all.
+</span><span class='line'>KeepUnusedXServer=false
+</span><span class='line'># The name of the Bumbleblee server group name (GID name)
+</span><span class='line'>ServerGroup=bumblebee
+</span><span class='line'># Card power state at exit. Set to false if the card shoud be ON when Bumblebee
+</span><span class='line'># server exits.
+</span><span class='line'>TurnCardOffAtExit=false
+</span><span class='line'># The default behavior of '-f' option on optirun. If set to "true", '-f' will
+</span><span class='line'># be ignored.
+</span><span class='line'>NoEcoModeOverride=false
+</span><span class='line'># The Driver used by Bumblebee server. If this value is not set (or empty),
+</span><span class='line'># auto-detection is performed. The available drivers are nvidia and nouveau
+</span><span class='line'># (See also the driver-specific sections below)
+</span><span class='line'>Driver=nvidia
+</span><span class='line'># Directory with a dummy config file to pass as a -configdir to secondary X
+</span><span class='line'>XorgConfDir=/etc/bumblebee/xorg.conf.d
+</span><span class='line'>
+</span><span class='line'>## Client options. Will take effect on the next optirun executed.
+</span><span class='line'>[optirun]
+</span><span class='line'># Acceleration/ rendering bridge, possible values are auto, virtualgl and
+</span><span class='line'># primus.
+</span><span class='line'>Bridge=auto
+</span><span class='line'># The method used for VirtualGL to transport frames between X servers.
+</span><span class='line'># Possible values are proxy, jpeg, rgb, xv and yuv.
+</span><span class='line'>VGLTransport=proxy
+</span><span class='line'># List of paths which are searched for the primus libGL.so.1 when using
+</span><span class='line'># the primus bridge
+</span><span class='line'>PrimusLibraryPath=/usr/lib/x86_64-linux-gnu/primus:/usr/lib/i386-linux-gnu/primus
+</span><span class='line'># Should the program run under optirun even if Bumblebee server or nvidia card
+</span><span class='line'># is not available?
+</span><span class='line'>AllowFallbackToIGC=false
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'># Driver-specific settings are grouped under [driver-NAME]. The sections are
+</span><span class='line'># parsed if the Driver setting in [bumblebeed] is set to NAME (or if auto-
+</span><span class='line'># detection resolves to NAME).
+</span><span class='line'># PMMethod: method to use for saving power by disabling the nvidia card, valid
+</span><span class='line'># values are: auto - automatically detect which PM method to use
+</span><span class='line'>#         bbswitch - new in BB 3, recommended if available
+</span><span class='line'>#       switcheroo - vga_switcheroo method, use at your own risk
+</span><span class='line'>#             none - disable PM completely
+</span><span class='line'># https://github.com/Bumblebee-Project/Bumblebee/wiki/Comparison-of-PM-methods
+</span><span class='line'>
+</span><span class='line'>## Section with nvidia driver specific options, only parsed if Driver=nvidia
+</span><span class='line'>[driver-nvidia]
+</span><span class='line'># Module name to load, defaults to Driver if empty or unset
+</span><span class='line'>KernelDriver=nvidia-331-updates
+</span><span class='line'>PMMethod=auto
+</span><span class='line'># colon-separated path to the nvidia libraries
+</span><span class='line'>LibraryPath=/usr/lib/nvidia-331-updates:/usr/lib32/nvidia-331-updates
+</span><span class='line'># comma-separated path of the directory containing nvidia_drv.so and the
+</span><span class='line'># default Xorg modules path
+</span><span class='line'>XorgModulePath=/usr/lib/nvidia-331-updates/xorg,/usr/lib/xorg/modules
+</span><span class='line'>XorgConfFile=/etc/bumblebee/xorg.conf.nvidia
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'>## Section with nouveau driver specific options, only parsed if Driver=nouveau
+</span><span class='line'>[driver-nouveau]
+</span><span class='line'>KernelDriver=nouveau
+</span><span class='line'>PMMethod=auto
+</span><span class='line'>XorgConfFile=/etc/bumblebee/xorg.conf.nouveau</span></code></pre></td></tr></table></div></figure>
+
+
+<p>save lalu reboot.</p>
+
+<p>setelah reboot cek kembali apakah GPU secondary nya sudah bisa diakses.</p>
+
+<figure class='code'><figcaption><span>Cek </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>optirun bash</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><figcaption><span>Cek Glxgears</span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>optirun glxgears</span></code></pre></td></tr></table></div></figure>
+
+
+<p><img class="center" src="http://pramono.github.io/images/glx.jpg" width="420" height="420" title="glxgears" ></p>
+
+<figure class='code'><figcaption><span>Cek opengl</span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>glxinfo | grep "OpenGL"</span></code></pre></td></tr></table></div></figure>
+
+
+<p><img class="center" src="http://pramono.github.io/images/opengl.jpg" width="420" height="420" title="opengl" ></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Cara Install Octopress Dan Deploy Ke Github]]></title>
+    <link href="http://pramono.github.io/blog/2014/09/18/cara-install-octopress-dan-deploy-ke-github/"/>
+    <updated>2014-09-18T10:13:19+07:00</updated>
+    <id>http://pramono.github.io/blog/2014/09/18/cara-install-octopress-dan-deploy-ke-github</id>
+    <content type="html"><![CDATA[<p>Selamat pagi. Akhirnya masa-masa kuliah saya berakhir, mumpung masih pengangguran saya mencoba membuat sedikit tutorial cara install octopress dan cara deploy ke github.</p>
+
+<p>Octopress itu apaan sih ?</p>
+
+<p><strong><code>Octopress is a bloging framework for hacker.</code></strong></p>
+
+<p>Gitu katanya.</p>
+
+<p>Octopress menggunakan markdown yang nantinya akan di generate oleh jekyll menjadi sebuah halaman html static. Menggunakan octopress berarti kamu tidak perlu memakai jasa hosting berbayar untuk menyimpan database dari blog kamu. kamu cukup menggunakan github atau heroku yang tentunya gratis.</p>
+
+<p>Pertama pastikan kamu sudah menginstall Ruby dan gitcore. Rekomendasi dari octopress.org adalah ruby yang digunakan sebaiknya versi 1.9.3 atau di atasnya. Kalau kamu menggunakan sistem operasi Slackware 14.0 atau 14.1 kamu tidak perlu menginstall ruby dan gitcore. Semuanya sudah di sediakan oleh om Patrick Volkerding. Kalau masalah depedency paket slackware memang oke. Tapi kalau kamu pake ubuntu ya kudu wajib di install dulu.</p>
+
+<!-- more-->
+
+
+<p>Oiya hampir kelupaan, pada ubuntu yang saya gunakan 14.04 install juga curl dan node js nya. Soalnya sewaktu saya rake preview halaman octopress nya gak muncul. Setelah tanya embah ternyata harus install curl dan node js nya. Kalau pake slackware gimana ? Ya gak usah. Udah include didalamnya. Keren kan si slackware.</p>
+
+<p>Kalau sudah di install semuanya sekarang kita clone dari github, kalau belum punya akun github, bikin dulu akun githubnya.</p>
+
+<p><code>git clone git://github.com/imathis/octopress.git username.github.io</code></p>
+
+<p>contoh</p>
+
+<figure class='code'><figcaption><span>Clone Github </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git clone git://github.com/imathis/octopress.git indrapramono.github.io
+</span><span class='line'>cd indrapramono.github.io</span></code></pre></td></tr></table></div></figure>
+
+
+<p>install gem bundler kalau belum di install.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>gem install bundler
+</span><span class='line'>bundle install</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><figcaption><span>Perintah rake </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rake install
+</span><span class='line'>rake new_post["judul artikel"]</span></code></pre></td></tr></table></div></figure>
+
+
+<p>seperti pada gambar</p>
+
+<p><img class="center" src="http://pramono.github.io/images/newpost.jpg" width="500" height="500" title="Rake NewPost" ></p>
+
+<p>Kalau tidak ada yang error, install page di githubnya. Buat repository baru di github namarepo.github.io.git. Kalau belum jelas silahkan berkunjung ke <a href="http://pramono.github.io/blog/2014/09/18/cara-membuat-repository-baru-di-github/">sini</a></p>
+
+<p><code>rake setup_github_pages</code>
+<code>git@github.com:usernamae/namarepository</code></p>
+
+<p>contoh</p>
+
+<figure class='code'><figcaption><span>Deploy ke Github </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rake setup_github_pages
+</span><span class='line'>git@github.com:indrapramono/indrapramono.github.io.git</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Kalau sudah langsung aja di generate &amp; deploy.</p>
+
+<figure class='code'><figcaption><span>Rake Generate & Deploy </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rake generate
+</span><span class='line'>rake deploy</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Cara Membuat Repository Baru Di Github]]></title>
+    <link href="http://pramono.github.io/blog/2014/09/18/cara-membuat-repository-baru-di-github/"/>
+    <updated>2014-09-18T09:54:23+07:00</updated>
+    <id>http://pramono.github.io/blog/2014/09/18/cara-membuat-repository-baru-di-github</id>
+    <content type="html"><![CDATA[<p>Pada kesempatan kali ini saya ingin men-share bagaimana membuat repository baru di github. Apaan sih github ? Singkatnya sih github itu tempat menyimpan segala macem source code entah itu source code untuk membangun web, ataupun software yang di open source kan oleh penggunggah code ke repository nya. Semua orang bisa mendownload dan memodifikasinya sesuai keinginan. Mungkin di Open karena bertujuan agar applikasi yang sedang di kerjakannya dapat dengan cepat berkembang dan pastinya agar software yang sedang dibangun dapat menjadi lebih baik.</p>
+
+<p>Pertama kamu harus punya akun github. Daftar aja tuh. Gratis kok.</p>
+
+<p>Terus ikutin aja nih cara-cara yang ada di gambar dibawah.</p>
+
+<!-- more-->
+
+
+<p><img class="center" src="http://pramono.github.io/images/repo1.png" width="420" height="420"></p>
+
+<p><img class="center" src="http://pramono.github.io/images/repo2.png" width="420" height="420"></p>
+
+<p>Kalau reponya udah jadi penampakannya seperti ini</p>
+
+<p><img class="center" src="http://pramono.github.io/images/repo3.png" width="420" height="420"></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Install Kernel 3.8.2 Dari Source Untuk Slackware 14.0]]></title>
+    <link href="http://pramono.github.io/blog/2014/09/18/install-kernel-3-dot-8-2-dari-source-untuk-slackware-14-dot-0/"/>
+    <updated>2014-09-18T06:04:27+07:00</updated>
+    <id>http://pramono.github.io/blog/2014/09/18/install-kernel-3-dot-8-2-dari-source-untuk-slackware-14-dot-0</id>
+    <content type="html"><![CDATA[<p>Selamat malam teman teman, seperti biasa, tulisan yang saya buat bertujuan untuk sekedar mengingatkan saya yang sudah lupaan hehe. Sebenarnya saya hanya iseng-iseng aja mencoba kernel 3.8.2 dengan dalih si kernel baru ini sudah men-support secara default kernel module alx yang di butuhkan LAN Card atheros AR8162 di laptop kesayangan saya, namun apa daya ternyata kernel baru ini belum juga memuat module alx milik atheros AR8162. Tapi apa boleh buat toh kernel nya udah terinstall dan berhasil di boot. Oiya dan satu lagi, problem LAN Card sudah solved, :D nanti saya akan tulis di tulisan selanjutnya.
+Tentu saja kernel baru ini memuat module-module yang lebih baru dan lebih stabil dari kernel sebelumnya, untuk “mengintip” apa saja perubahan yang ada di kernel baru ini bisa lihat di bagian changelog nya.</p>
+
+<!-- more-->
+
+
+<p>Download dulu kernelnya, Kernel download dari <a href="http://mirror.facebook.net/kernel.org/pub/linux/kernel/v3.0/linux-3.8.2.tar.xz">mirror facebook</a>
+kalo sudah di download kemudian buka terminal dan masuk ke dir /usr/src/</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>root@darkstar:# cd /usr/src</span></code></pre></td></tr></table></div></figure>
+
+
+<p>lalu extrak source kernelnya</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>root@darkstar:# tar xvf /path/linux-kernel-.tar.xz</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>NOTE : path adalah tempat dimana anda menyimpan hasil download-an kernel tersebut</strong></p>
+
+<p>kalo sudah di extrak sekarang buat simbolik link</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>root@darkstar:# ln -s linux-versi linux</span></code></pre></td></tr></table></div></figure>
+
+
+<p>pindah ke hasil extrak source kernel yang anda download</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>root@darkstar:# cd linux-versi</span></code></pre></td></tr></table></div></figure>
+
+
+<p>buat konfigurasi baru untuk kernel baru anda, konfigurasi baru ini bisa merujuk pada kernel anda yang sebelumnya</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>root@darkstar:# cat /boot/config-kernel-yang-andainginkan > .config
+</span><span class='line'>root@darkstar:# make oldconfig
+</span><span class='line'>root@darkstar:# bzImage</span></code></pre></td></tr></table></div></figure>
+
+
+<p>tunggu proses bzImage sampai selesai, karena proses ini memakan waktu yang cukup lama, ya bisa rebus air dulu untuk nyeduh kopi. :p
+kalo sudah selesai, sekarang make modulesnya</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>root@darkstar:# make modules</span></code></pre></td></tr></table></div></figure>
+
+
+<p>nah kalo airnya sudah mendidih, sekarang giliran nyeduh kopinya, udah beli kan kopinya ? :p karena proses penginstallan modulenya juga memakan waktu yang agak lama.
+Kalo semuanya sudah selesai. Sekarang masuk ke directory</p>
+
+<p><code>/usr/src/linux-versi/tar-install/boot</code></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>root@darkstar:# cd /usr/src/linux-versi/tar-install/boot</span></code></pre></td></tr></table></div></figure>
+
+
+<p>copykan semuanya kecuali vmlinux ke directory /boot</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>root@darkstar:# cp -a System.map-* config-* vmlinuz-* /boot</span></code></pre></td></tr></table></div></figure>
+
+
+<p>kalau sudah sekarang pindah ke
+<code>/usr/src/linux-versi/tar-install/lib</code></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>root@darkstar:# cd /usr/src/linux-versi/tar-install/lib</span></code></pre></td></tr></table></div></figure>
+
+
+<p>disana ada directory firmware/ dan modules/ lalu anda copykan saja modulesnya ke /lib</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>root@darkstar:# cp -r modules /lib/</span></code></pre></td></tr></table></div></figure>
+
+
+<p>sekarang pindah ke /</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>root@darkstar:# cd /</span></code></pre></td></tr></table></div></figure>
+
+
+<p>sekarang depmod versi kernel yang baru</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>root@darkstar:# depmod -a versi-kernel-baru</span></code></pre></td></tr></table></div></figure>
+
+
+<p>sekarang buat initrd nya, oiya kalo sebelumnya anda sudah ada initrd.gz maka saya sarankan agar menambahkan parameter -o setelah perintah mkintrd agar initrd yang lama tidak tertimpa dengan initrd yang baru</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>root@darkstar:# mkinitrd -o NAMAINITRDANDA -c -k 3.8.2-smp -m mbcache:jbd:xfs -f xfs -r /dev/sda6</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>NOTE : xfs adalah jenis file sistem yang saya gunakan, dan /dev/sda6 adalah letak root pada Linux Slakcware saya, sesuaikan dengan keadaan mesin anda.</strong></p>
+
+<p>kalau sudah tidak ada yang error sekarang edit lilo nya</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>root@darkstar:# nano /etc/lilo.conf</span></code></pre></td></tr></table></div></figure>
+
+
+<p>tambahkan baris ini</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'># Linux bootable partition config begins
+</span><span class='line'>image = /boot/vmlinuz-3.8.2-smp
+</span><span class='line'>initrd = /boot/newinitrd
+</span><span class='line'>root = /dev/sda6
+</span><span class='line'>label = Linuxbaru
+</span><span class='line'>read-only
+</span><span class='line'># Linux bootable partition config ends</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Selamat mencoba. Happy hacking :D</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Memainkan MP3 Di Amarok Slackware 14.0]]></title>
+    <link href="http://pramono.github.io/blog/2014/09/17/memainkan-mp3-di-amarok-slackware-14-dot-0/"/>
+    <updated>2014-09-17T23:02:11+07:00</updated>
+    <id>http://pramono.github.io/blog/2014/09/17/memainkan-mp3-di-amarok-slackware-14-dot-0</id>
+    <content type="html"><![CDATA[<p>Mungkin beberapa orang sedikit kesulitan ingin memainkan file mp3 nya di slackware menggunakan amarok, sebenarnya sih slackware menyediakan XMSS untuk memainkan mp3. Tapi bagi yang ingin mencicipi amarok pasti akan mengalami sedikit kendala karena tidak bisa memainkan mp3. hal ini terjadi karena pluginnya belum diinstall. Jadi kita hanya cukup menginstall pluginsnya saja</p>
+
+<p>Amarok yang sudah disediakan slackware tidak di lengkapi dengan pluginsnya (kalo dislackware 14.0 sih begitu) kita harus mencari pluginsnya dan membuildnya sendiri. Inilah seninya pake slackware. :v</p>
+
+<p>yang kita butuhkan adalah paket gst-plugins-bad dan gst-plugins-ugly beserta skrip buildnya, kita langsung pergi aja ke TKPeh.</p>
+
+<!-- more-->
+
+
+<p>1.Download gst-plugins-bad dan buildnnya dulu. <a href="http://gstreamer.freedesktop.org/src/gst-plugins-bad/gst-plugins-bad-0.10.23.tar.xz">gst-plugins-bad</a> dan<a href="http://slackbuilds.org/slackbuilds/14.0/multimedia/gst-plugins-bad.tar.gz">Skrip Build</a></p>
+
+<p>2.Download gst-plugins-ugly skrip buildnya, <a href="http://slackbuilds.org/slackbuilds/14.0/multimedia/gst-plugins-ugly.tar.gz">gst-plugins-ugly Skrip Build</a></p>
+
+<p>Kalau udah di install semuanya langsung aja setel lagunya :D</p>
+
+<p><img class="center" src="http://pramono.github.io/images/amarok.jpg" width="420" height="420" title="Amarok" ></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Install VGA NVIDIA Optimus Pada Slackware 14.0]]></title>
+    <link href="http://pramono.github.io/blog/2014/09/17/install-vga-nvidia-optimus-pada-slackware-14-dot-0/"/>
+    <updated>2014-09-17T19:58:49+07:00</updated>
+    <id>http://pramono.github.io/blog/2014/09/17/install-vga-nvidia-optimus-pada-slackware-14-dot-0</id>
+    <content type="html"><![CDATA[<p>Halo selamat malam, pada kali ini saya akan men-share beberapa hal yang harus dilakukan agar VGA NVIDIA yang sudah menggunakan Optimus dapat di gunakan pada slackware 14.0.</p>
+
+<p>sebenernya apa sih Optimus yang di tanamkan pada produk NVIDIA yang baru-baru ini ? Optimus adalah fitur yang di tanam pada produk NVIDIA terbaru, pada tipe apa sebenarnya optimus pertama kali di tanam di NVIDIA saya tidak terlalu mengetahuinya, tapi yang saya gunakan adalah NVIDIA GFORCE GT 610m, pada intinya vendor NVIDIA menanamkan optimus di produknya adalah untuk menghemat daya baterai di Notebook, kenapa ? Karena NVIDIA optimus ini baru akan bekerja jika mesin memerlukannya, misal jika ingin bermain game berat seperti PES,</p>
+
+<!-- more-->
+
+
+<p>menonton video bluray, menjalankan applikasi pembuat graphic yang sudah mendukung fitur 3D seperti blender, jika mesin hanya menggunakan VGA internal bawaan processor, maka kinerja mesin menjadi tidak maksimal, NVIDIA optimus biasanya di gandeng bersama processor intel keluarga “Core i”, pada awalnya saya mencoba driver yang telah disediakan oleh NVIDIA di www.nvidia.com eh ternyata malah gak bisa masuk ke desktop, x_x terpaksa saya harus menghapus xorg nya dan meng-uninstall drivernya. Surfing di berbagai forum slackware akhirnya nemu juga triknya, oiya hampir saja lupa, terimakasih untuk pak Willy yang sudah memberikan saya “wejangan” :D</p>
+
+<p>Pertama download bumblebee-slackbuildnya kita clone dari github dan setelah itu masuk ke direktorinya.</p>
+
+<figure class='code'><figcaption><span>Clone Github Bumblebee </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git clone https://github.com/jgeboski/Bumblebee-SlackBuilds.git
+</span><span class='line'>cd Bumblebee-SlackBuilds</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Download depedensinya</p>
+
+<figure class='code'><figcaption><span>Depedensi Bumblebee </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>./download.sh</span></code></pre></td></tr></table></div></figure>
+
+
+<p>1.Build dan install: libjpeg-turbo</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'># cd libjpeg-turbo
+</span><span class='line'># ./libjpeg-turbo.SlackBuild
+</span><span class='line'># installpkg /tmp/libjpeg-turbo-1.2.1-i486-1_bbsb.tgz</span></code></pre></td></tr></table></div></figure>
+
+
+<p>2.Build dan install: VirtualGL</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'># cd ../VirtualGL
+</span><span class='line'># ./VirtualGL.SlackBuild
+</span><span class='line'># installpkg /tmp/VirtualGL-2.3.2-i486-1_bbsb.tgz</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>HAPUS NOUVEAU, BUKA DVD SLACKWARE ANDA, MASUK EXTRA LALU INSTALL</strong> <code>xf86-video-nouveau-blacklist</code></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>#installpkg xf86-video-noveau-blacklist.txz</span></code></pre></td></tr></table></div></figure>
+
+
+<p>3.Build dan install: nvidia-bumblebee</p>
+
+<figure class='code'><figcaption><span>Install Bumblebee </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'># cd ../nvidia-bumblebee
+</span><span class='line'># ./nvidia-bumblebee.SlackBuild
+</span><span class='line'># installpkg /tmp/nvidia-bumblebee-313.18-i486-1_bbsb.tgz</span></code></pre></td></tr></table></div></figure>
+
+
+<p>4.Build dan install: nvidia-kernel</p>
+
+<figure class='code'><figcaption><span>Install Nvidia-Kernel </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'># cd ../nvidia-kernel
+</span><span class='line'># ./nvidia-kernel.SlackBuild
+</span><span class='line'># installpkg /tmp/nvidia-kernel-313.18_3.2.29_smp-x86-1_bbsb.tgz</span></code></pre></td></tr></table></div></figure>
+
+
+<p>5.Build dan install: bbswitch, libbsd, bumblebee</p>
+
+<figure class='code'><figcaption><span>Install Lagi </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'># cd../bbswitch
+</span><span class='line'># ./bbswitch.SlackBuild
+</span><span class='line'># upgradepkg --install-new bbswitch-*.tgz
+</span><span class='line'># cd ../libbsd
+</span><span class='line'># ./libbsd.SlackBuild
+</span><span class='line'># upgradepkg --install-new libbsd-*.tgz
+</span><span class='line'># cd ../bumblebee
+</span><span class='line'># ./bumblebee.SlackBuild
+</span><span class='line'># installpkg /tmp/bumblebee-3.0.1-i486-1_bbsb.tgz</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Sekarang kita siap untuk melakukan beberapa pengaturan pasca instalasi. Paket bumblebeed memberikan kita dengan script rc.bumblebeed di /etc/rc.d mana skrip startup lainnya juga terletak. Rubah permissionnya dan mulai bumblebeednya..</p>
+
+<figure class='code'><figcaption><span>chmod Bumblebeed </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'># chmod +x /etc/rc.d/rc.bumblebeed
+</span><span class='line'># /etc/rc.d/rc.bumblebeed start</span></code></pre></td></tr></table></div></figure>
+
+
+<p>selesai, sekarang coba jalankan perintah di bawah.</p>
+
+<figure class='code'><figcaption><span>chmod Bumblebeed </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ optirun glxspheres</span></code></pre></td></tr></table></div></figure>
+
+
+<p><img class="center" src="http://pramono.github.io/images/bumblebee.jpeg" width="500" height="500" title="Bumblebee Berhasil" ></p>
+
+<p>jika sukses maka akan terlihat seperti diatas. lalu cek apakah benar VGA nya sudah bisa di kenali kernelnya.</p>
+
+<figure class='code'><figcaption><span>cek </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'># glxinfo | grep “OpenGL”</span></code></pre></td></tr></table></div></figure>
+
+
+<p><img class="center" src="http://pramono.github.io/images/glxinfo.jpeg" width="500" height="500" title="Cek glxinfo" ></p>
+
+<p><strong>NB : JIKA TIDAK BISA MENJALANKAN PERINTAH  </strong></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>#optirun bash</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Jalankan dulu skrip bumblebee nya</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>}# /etc/rc.d/rc.bumblebeed start</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Semoga bermanfaat, kalo ada yang error Komen saja disiini.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Mempercepat Proses Booting Di Slackware 14.0]]></title>
+    <link href="http://pramono.github.io/blog/2014/09/17/mempercepat-proses-booting-di-slackware-14-dot-0/"/>
+    <updated>2014-09-17T11:22:09+07:00</updated>
+    <id>http://pramono.github.io/blog/2014/09/17/mempercepat-proses-booting-di-slackware-14-dot-0</id>
+    <content type="html"><![CDATA[<p>proses booting yang di lakukan slackware 14.0 memang bisa di katakan cukup lama, karena melakukan check bios terlebih dahulu, hal ini tentu saja cukup mengganggu (buat saya) untuk orang yang tidak sabaran (termasuk saya) hehehehe.</p>
+
+<p>Pada distro linux lain seperti fedora, terkadang juga melakukan proses booting yang lama, pada fedora, cukup dengan mematikan service yang tidak di gunakan. Sebenarnya cara yang sama juga saya lakukan pada slackware 14.0 tapi hasilny nihil. sempet baca-baca di forum, ternyata banyak juga orang yang mengeluh lamanya proses booting di slackware 14.0. Dan akhirnya saya menemukan juga solved problemnya. Ada beberapa cara agar proses booting menjadi cepat yaitu <!-- more --></p>
+
+<p>1.menambahkan <strong>compact</strong> pada skrip LILO</p>
+
+<p>2.menonaktifkan proses yang tidak di perlukan pada /etc/rc.d/rc.M </p>
+
+<p>3.menonaktifkan openssh</p>
+
+<p>Oke langsung aja.</p>
+
+<p>1) Menambahkan <strong>compact</strong> pada skrip LILO, Buka konsole lalu edit /etc/lilo.conf</p>
+
+<figure class='code'><figcaption><span>Perintah Terminal </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>nano /etc/lilo.conf</span></code></pre></td></tr></table></div></figure>
+
+
+<p>lalu tambahkan <strong>compact</strong> pada baris setelah baris <code>boot = /dev/sda</code></p>
+
+<p>save, lalu keluar dari nano.</p>
+
+<p>2) Menonaktifkan proses yang tidak di perlukan pada <code>/etc/rc.d/rc.M</code> buka konsole ketik</p>
+
+<figure class='code'><figcaption><span>Perintah Terminal 2 </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>nano /etc/rc.d/rc.M</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Cari baris
+<code># Update any existing icon cache files</code> nonaktifkan dengan memberi tanda tagar sampai baris berikut.</p>
+
+<figure class='code'><figcaption><span>Skrip </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'># Update mime database:
+</span><span class='line'>#if [ -x /usr/bin/update-mime-database -a -d /usr/share/mime ]; then
+</span><span class='line'># echo "Updating MIME database: /usr/bin/update-mime-database /usr/share/mime &"
+</span><span class='line'># /usr/bin/update-mime-database /usr/share/mime 1> /dev/null 2> /dev/null &
+</span><span class='line'>#fi</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Seperti pada gambar</p>
+
+<p><img class="center" src="http://pramono.github.io/images/BOOTING.jpg" width="500" height="500" title="Booting Cepat" ></p>
+
+<p>satu jurus lagi nih supaya booting slackware mu cepet, wussss wusss.</p>
+
+<p>3) menonaktifkan openssh, Back to konsole, jalankan perintah</p>
+
+<figure class='code'><figcaption><span>Perintah Terminal 2 </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>nano /etc/rc.d/rc.inet2</span></code></pre></td></tr></table></div></figure>
+
+
+<p>beri tanda Tagar pada baris ini</p>
+
+<figure class='code'><figcaption><span>Perintah Terminal 2 </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'># Start the OpenSSH SSH daemon:
+</span><span class='line'>#if [ -x /etc/rc.d/rc.sshd ]; then
+</span><span class='line'>#echo "Starting OpenSSH SSH daemon: /usr/sbin/sshd"
+</span><span class='line'>#/etc/rc.d/rc.sshd start
+</span><span class='line'>fi</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Jika sudah, hasilnya akan terlihat seperti gambar.</p>
+
+<p><img class="center" src="http://pramono.github.io/images/openssh.jpeg" width="500" height="500" title="Booting Sangat Cepat" ></p>
+
+<p>semoga bermanfaat.</p>
+]]></content>
+  </entry>
+  
+</feed>

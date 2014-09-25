@@ -1,0 +1,574 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Optimus | Pramono]]></title>
+  <link href="http://pramono.github.io/blog/categories/optimus/atom.xml" rel="self"/>
+  <link href="http://pramono.github.io/"/>
+  <updated>2014-09-26T06:17:04+07:00</updated>
+  <id>http://pramono.github.io/</id>
+  <author>
+    <name><![CDATA[Pramono]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Install NVIDIA GT610m Aka Optimus Di Ubuntu 14.04]]></title>
+    <link href="http://pramono.github.io/blog/2014/09/18/install-nvidia-gt610-m-aka-optimus-di-ubuntu-14-dot-04/"/>
+    <updated>2014-09-18T20:19:03+07:00</updated>
+    <id>http://pramono.github.io/blog/2014/09/18/install-nvidia-gt610-m-aka-optimus-di-ubuntu-14-dot-04</id>
+    <content type="html"><![CDATA[<p>Pada kesempatan ini saya akan men-share cara install Nvidia Optimus pada ubuntu. Khusus untuk ubuntu prosesnya gak ribet ribet amat. cuma tinggal tambahin repo trus apt-get install :p</p>
+
+<p>tambahkan repo universe dan multiverse</p>
+
+<p><figure class='code'><figcaption><span>Universe &amp; Multiverse </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo add-apt-repository &ldquo;deb &lt;a href="http://archive.ubuntu.com/ubuntu">http://archive.ubuntu.com/ubuntu&lt;/a> $(lsb_release -sc) main universe restricted multiverse&rdquo;&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;p>sudo add-apt-repository &ldquo;deb &lt;a href="http://archive.ubuntu.com/ubuntu">http://archive.ubuntu.com/ubuntu&lt;/a> $(lsb_release -sc) universe&rdquo;&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;p>sudo add-apt-repository &ldquo;deb &lt;a href="http://archive.ubuntu.com/ubuntu">http://archive.ubuntu.com/ubuntu&lt;/a> $(lsb_release -sc) universe&rdquo;&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;p>sudo add-apt-repository &ldquo;deb &lt;a href="http://archive.ubuntu.com/ubuntu">http://archive.ubuntu.com/ubuntu&lt;/a> $(lsb_release -sc) main universe restricted multiverse&rdquo;&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;p>sudo add-apt-repository &ldquo;deb &lt;a href="http://archive.canonical.com/ubuntu">http://archive.canonical.com/ubuntu&lt;/a> $(lsb_release -sc) partner&rdquo;</span></code></pre></td></tr></table></div></figure></p>
+
+<!-- more-->
+
+
+<p>Lalu update reponya dan install bumblebee nya serta reboot.</p>
+
+<p><figure class='code'><figcaption><span>Terminal </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo apt-get update&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;p>sudo apt-get install mesa-utils&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;p>sudo apt-get install bumblebee bumblebee-nvidia primus linux-headers-generic&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;p>reboot</span></code></pre></td></tr></table></div></figure></p>
+
+<p>Kalau sudah di install coba akses GPU secondary nya.</p>
+
+<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>optirun bash</span></code></pre></td></tr></table></div></figure>
+kalau terjadi error</p>
+
+<p><code>[ERROR]Cannot access secondary GPU - error: [XORG] (EE) NVIDIA(0): Failed to initialize the NVIDIA GPU at PCI:1:0:0. Please[ERROR]Aborting because fallback start is disabled</code></p>
+
+<p>lakukan beberapa langkah dibawah ini.
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo apt-get install nvidia-331-updates</span></code></pre></td></tr></table></div></figure></p>
+
+<p>edit skrip konfigurasi bumblebee <code>sudo gedit /etc/bumblebee/bumblebee.conf</code></p>
+
+<p>ganti konfigurasinya menggunakan skrip dibawah, sebelumnya backup dahulu skrip konfigurasi defaultnya. untuk jaga-jaga</p>
+
+<p><figure class='code'><figcaption><span>Konfigurasi Bumblebee </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+<span class='line-number'>53</span>
+<span class='line-number'>54</span>
+<span class='line-number'>55</span>
+<span class='line-number'>56</span>
+<span class='line-number'>57</span>
+<span class='line-number'>58</span>
+<span class='line-number'>59</span>
+<span class='line-number'>60</span>
+<span class='line-number'>61</span>
+<span class='line-number'>62</span>
+<span class='line-number'>63</span>
+<span class='line-number'>64</span>
+<span class='line-number'>65</span>
+<span class='line-number'>66</span>
+<span class='line-number'>67</span>
+<span class='line-number'>68</span>
+<span class='line-number'>69</span>
+<span class='line-number'>70</span>
+<span class='line-number'>71</span>
+<span class='line-number'>72</span>
+<span class='line-number'>73</span>
+<span class='line-number'>74</span>
+<span class='line-number'>75</span>
+<span class='line-number'>76</span>
+<span class='line-number'>77</span>
+<span class='line-number'>78</span>
+<span class='line-number'>79</span>
+<span class='line-number'>80</span>
+<span class='line-number'>81</span>
+<span class='line-number'>82</span>
+<span class='line-number'>83</span>
+<span class='line-number'>84</span>
+<span class='line-number'>85</span>
+<span class='line-number'>86</span>
+<span class='line-number'>87</span>
+<span class='line-number'>88</span>
+<span class='line-number'>89</span>
+<span class='line-number'>90</span>
+<span class='line-number'>91</span>
+<span class='line-number'>92</span>
+<span class='line-number'>93</span>
+<span class='line-number'>94</span>
+<span class='line-number'>95</span>
+<span class='line-number'>96</span>
+<span class='line-number'>97</span>
+<span class='line-number'>98</span>
+<span class='line-number'>99</span>
+<span class='line-number'>100</span>
+<span class='line-number'>101</span>
+<span class='line-number'>102</span>
+<span class='line-number'>103</span>
+<span class='line-number'>104</span>
+<span class='line-number'>105</span>
+<span class='line-number'>106</span>
+<span class='line-number'>107</span>
+<span class='line-number'>108</span>
+<span class='line-number'>109</span>
+<span class='line-number'>110</span>
+<span class='line-number'>111</span>
+<span class='line-number'>112</span>
+<span class='line-number'>113</span>
+<span class='line-number'>114</span>
+<span class='line-number'>115</span>
+<span class='line-number'>116</span>
+<span class='line-number'>117</span>
+<span class='line-number'>118</span>
+<span class='line-number'>119</span>
+<span class='line-number'>120</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>Configuration file for Bumblebee. Values should &lt;strong>not&lt;/strong> be put between quotes&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;h2>Server options. Any change made in this section will need a server restart&lt;/h2>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>to take effect.&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;p>[bumblebeed]&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>The secondary Xorg server DISPLAY number&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;p>VirtualDisplay=:8&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>Should the unused Xorg server be kept running? Set this to true if waiting&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>for X to be ready is too long and don&rsquo;t need power management at all.&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;p>KeepUnusedXServer=false&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>The name of the Bumbleblee server group name (GID name)&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;p>ServerGroup=bumblebee&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>Card power state at exit. Set to false if the card shoud be ON when Bumblebee&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>server exits.&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;p>TurnCardOffAtExit=false&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>The default behavior of &lsquo;-f&rsquo; option on optirun. If set to &ldquo;true&rdquo;, &lsquo;-f&rsquo; will&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>be ignored.&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;p>NoEcoModeOverride=false&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>The Driver used by Bumblebee server. If this value is not set (or empty),&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>auto-detection is performed. The available drivers are nvidia and nouveau&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>(See also the driver-specific sections below)&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;p>Driver=nvidia&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>Directory with a dummy config file to pass as a -configdir to secondary X&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;p>XorgConfDir=/etc/bumblebee/xorg.conf.d&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;h2>Client options. Will take effect on the next optirun executed.&lt;/h2>
+</span><span class='line'>
+</span><span class='line'>&lt;p>[optirun]&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>Acceleration/ rendering bridge, possible values are auto, virtualgl and&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>primus.&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;p>Bridge=auto&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>The method used for VirtualGL to transport frames between X servers.&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>Possible values are proxy, jpeg, rgb, xv and yuv.&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;p>VGLTransport=proxy&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>List of paths which are searched for the primus libGL.so.1 when using&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>the primus bridge&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;p>PrimusLibraryPath=/usr/lib/x86_64-linux-gnu/primus:/usr/lib/i386-linux-gnu/primus&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>Should the program run under optirun even if Bumblebee server or nvidia card&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>is not available?&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;p>AllowFallbackToIGC=false&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>Driver-specific settings are grouped under [driver-NAME]. The sections are&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>parsed if the Driver setting in [bumblebeed] is set to NAME (or if auto-&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>detection resolves to NAME).&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>PMMethod: method to use for saving power by disabling the nvidia card, valid&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>values are: auto - automatically detect which PM method to use&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>bbswitch - new in BB 3, recommended if available&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>switcheroo - vga_switcheroo method, use at your own risk&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>none - disable PM completely&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>&lt;a href="https://github.com/Bumblebee-Project/Bumblebee/wiki/Comparison-of-PM-methods">https://github.com/Bumblebee-Project/Bumblebee/wiki/Comparison-of-PM-methods&lt;/a>&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;h2>Section with nvidia driver specific options, only parsed if Driver=nvidia&lt;/h2>
+</span><span class='line'>
+</span><span class='line'>&lt;p>[driver-nvidia]&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>Module name to load, defaults to Driver if empty or unset&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;p>KernelDriver=nvidia-331-updates
+</span><span class='line'>PMMethod=auto&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>colon-separated path to the nvidia libraries&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;p>LibraryPath=/usr/lib/nvidia-331-updates:/usr/lib32/nvidia-331-updates&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>comma-separated path of the directory containing nvidia_drv.so and the&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>default Xorg modules path&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;p>XorgModulePath=/usr/lib/nvidia-331-updates/xorg,/usr/lib/xorg/modules
+</span><span class='line'>XorgConfFile=/etc/bumblebee/xorg.conf.nvidia&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;h2>Section with nouveau driver specific options, only parsed if Driver=nouveau&lt;/h2>
+</span><span class='line'>
+</span><span class='line'>&lt;p>[driver-nouveau]
+</span><span class='line'>KernelDriver=nouveau
+</span><span class='line'>PMMethod=auto
+</span><span class='line'>XorgConfFile=/etc/bumblebee/xorg.conf.nouveau</span></code></pre></td></tr></table></div></figure></p>
+
+<p>save lalu reboot.</p>
+
+<p>setelah reboot cek kembali apakah GPU secondary nya sudah bisa diakses.
+<figure class='code'><figcaption><span>Cek </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>optirun bash</span></code></pre></td></tr></table></div></figure></p>
+
+<p><figure class='code'><figcaption><span>Cek Glxgears</span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>optirun glxgears</span></code></pre></td></tr></table></div></figure></p>
+
+<p><img class="center" src="/images/glx.jpg" width="420" height="420" title="glxgears" ></p>
+
+<p><figure class='code'><figcaption><span>Cek opengl</span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>glxinfo | grep &ldquo;OpenGL&rdquo;</span></code></pre></td></tr></table></div></figure></p>
+
+<p><img class="center" src="/images/opengl.jpg" width="420" height="420" title="opengl" ></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Install VGA NVIDIA Optimus Pada Slackware 14.0]]></title>
+    <link href="http://pramono.github.io/blog/2014/09/17/install-vga-nvidia-optimus-pada-slackware-14-dot-0/"/>
+    <updated>2014-09-17T19:58:49+07:00</updated>
+    <id>http://pramono.github.io/blog/2014/09/17/install-vga-nvidia-optimus-pada-slackware-14-dot-0</id>
+    <content type="html"><![CDATA[<p>Halo selamat malam, pada kali ini saya akan men-share beberapa hal yang harus dilakukan agar VGA NVIDIA yang sudah menggunakan Optimus dapat di gunakan pada slackware 14.0.</p>
+
+<p>sebenernya apa sih Optimus yang di tanamkan pada produk NVIDIA yang baru-baru ini ? Optimus adalah fitur yang di tanam pada produk NVIDIA terbaru, pada tipe apa sebenarnya optimus pertama kali di tanam di NVIDIA saya tidak terlalu mengetahuinya, tapi yang saya gunakan adalah NVIDIA GFORCE GT 610m, pada intinya vendor NVIDIA menanamkan optimus di produknya adalah untuk menghemat daya baterai di Notebook, kenapa ? Karena NVIDIA optimus ini baru akan bekerja jika mesin memerlukannya, misal jika ingin bermain game berat seperti PES,</p>
+
+<!-- more-->
+
+
+<p>menonton video bluray, menjalankan applikasi pembuat graphic yang sudah mendukung fitur 3D seperti blender, jika mesin hanya menggunakan VGA internal bawaan processor, maka kinerja mesin menjadi tidak maksimal, NVIDIA optimus biasanya di gandeng bersama processor intel keluarga “Core i”, pada awalnya saya mencoba driver yang telah disediakan oleh NVIDIA di www.nvidia.com eh ternyata malah gak bisa masuk ke desktop, x_x terpaksa saya harus menghapus xorg nya dan meng-uninstall drivernya. Surfing di berbagai forum slackware akhirnya nemu juga triknya, oiya hampir saja lupa, terimakasih untuk pak Willy yang sudah memberikan saya “wejangan” :D</p>
+
+<p>Pertama download bumblebee-slackbuildnya kita clone dari github dan setelah itu masuk ke direktorinya.</p>
+
+<p><figure class='code'><figcaption><span>Clone Github Bumblebee </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git clone &lt;a href="https://github.com/jgeboski/Bumblebee-SlackBuilds.git">https://github.com/jgeboski/Bumblebee-SlackBuilds.git&lt;/a>
+</span><span class='line'>cd Bumblebee-SlackBuilds</span></code></pre></td></tr></table></div></figure></p>
+
+<p>Download depedensinya
+<figure class='code'><figcaption><span>Depedensi Bumblebee </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>./download.sh</span></code></pre></td></tr></table></div></figure></p>
+
+<p>1.Build dan install: libjpeg-turbo
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>cd libjpeg-turbo&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>./libjpeg-turbo.SlackBuild&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>installpkg /tmp/libjpeg-turbo-1.2.1-i486-1_bbsb.tgz&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;p></span></code></pre></td></tr></table></div></figure></p>
+
+<p>2.Build dan install: VirtualGL
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>cd ../VirtualGL&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>./VirtualGL.SlackBuild&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>installpkg /tmp/VirtualGL-2.3.2-i486-1_bbsb.tgz&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;p></span></code></pre></td></tr></table></div></figure></p>
+
+<p><strong>HAPUS NOUVEAU, BUKA DVD SLACKWARE ANDA, MASUK EXTRA LALU INSTALL</strong> <code>xf86-video-nouveau-blacklist</code>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>installpkg xf86-video-noveau-blacklist.txz&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;p></span></code></pre></td></tr></table></div></figure></p>
+
+<p>3.Build dan install: nvidia-bumblebee
+<figure class='code'><figcaption><span>Install Bumblebee </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>cd ../nvidia-bumblebee&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>./nvidia-bumblebee.SlackBuild&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>installpkg /tmp/nvidia-bumblebee-313.18-i486-1_bbsb.tgz&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;p></span></code></pre></td></tr></table></div></figure></p>
+
+<p>4.Build dan install: nvidia-kernel
+<figure class='code'><figcaption><span>Install Nvidia-Kernel </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>cd ../nvidia-kernel&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>./nvidia-kernel.SlackBuild&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>installpkg /tmp/nvidia-kernel-313.18_3.2.29_smp-x86-1_bbsb.tgz&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;p></span></code></pre></td></tr></table></div></figure></p>
+
+<p>5.Build dan install: bbswitch, libbsd, bumblebee
+<figure class='code'><figcaption><span>Install Lagi </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>cd../bbswitch&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>./bbswitch.SlackBuild&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>upgradepkg &ndash;install-new bbswitch-*.tgz&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>cd ../libbsd&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>./libbsd.SlackBuild&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>upgradepkg &ndash;install-new libbsd-*.tgz&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>cd ../bumblebee&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>./bumblebee.SlackBuild&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>installpkg /tmp/bumblebee-3.0.1-i486-1_bbsb.tgz&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;p></span></code></pre></td></tr></table></div></figure></p>
+
+<p>Sekarang kita siap untuk melakukan beberapa pengaturan pasca instalasi. Paket bumblebeed memberikan kita dengan script rc.bumblebeed di /etc/rc.d mana skrip startup lainnya juga terletak. Rubah permissionnya dan mulai bumblebeednya..</p>
+
+<p><figure class='code'><figcaption><span>chmod Bumblebeed </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>chmod +x /etc/rc.d/rc.bumblebeed&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>/etc/rc.d/rc.bumblebeed start&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;p></span></code></pre></td></tr></table></div></figure></p>
+
+<p>selesai, sekarang coba jalankan perintah di bawah.</p>
+
+<p><figure class='code'><figcaption><span>chmod Bumblebeed </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ optirun glxspheres</span></code></pre></td></tr></table></div></figure></p>
+
+<p><img class="center" src="/images/bumblebee.jpeg" width="500" height="500" title="Bumblebee Berhasil" ></p>
+
+<p>jika sukses maka akan terlihat seperti diatas. lalu cek apakah benar VGA nya sudah bisa di kenali kernelnya.</p>
+
+<p><figure class='code'><figcaption><span>cek </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>glxinfo | grep “OpenGL”&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;p></span></code></pre></td></tr></table></div></figure></p>
+
+<p><img class="center" src="/images/glxinfo.jpeg" width="500" height="500" title="Cek glxinfo" ></p>
+
+<p><strong>NB : JIKA TIDAK BISA MENJALANKAN PERINTAH  </strong>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>optirun bash&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;p></span></code></pre></td></tr></table></div></figure></p>
+
+<p>Jalankan dulu skrip bumblebee nya</p>
+
+<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>}# /etc/rc.d/rc.bumblebeed start</span></code></pre></td></tr></table></div></figure></p>
+
+<p>Semoga bermanfaat, kalo ada yang error Komen saja disiini.</p>
+]]></content>
+  </entry>
+  
+</feed>
